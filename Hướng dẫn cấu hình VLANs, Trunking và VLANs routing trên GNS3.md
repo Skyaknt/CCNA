@@ -15,13 +15,13 @@ Kéo thả các thiết bị cần thiết vào :  4 VPCS, 2 L2-SW, 2 L3-SW, 1 R
 <ul>
 <li>Bước 1. Cấu hình VTP cho các switch</li>
 *+ Cấu hình VTP mode server và domain cisco trên Switch L3-SW1*
-`L3-SW1(config)#hostname L3-SW1
+` L3-SW1(config)#hostname L3-SW1
 L3-SW1(config)#vtp mode server
 L3-SW1(config)#vtp domain cisco
 L3-SW1(config)#vtp password cisco
-L3-SW1(config)#vtp pruning`
+L3-SW1(config)#vtp pruning `
 
-+*Cấu hình VTP mode client trên switch L2-SW1 và L2-SW2 và L3-SW2*
+*+Cấu hình VTP mode client trên switch L2-SW1 và L2-SW2 và L3-SW2*
 `L2-SW1(config)#hostname L2-SW1
 L2-SW1(config)#vtp mode client
 L2-SW1(config)#vtp domain cisco
