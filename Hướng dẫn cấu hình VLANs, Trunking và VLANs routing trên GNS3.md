@@ -1,8 +1,8 @@
 #Hướng dẫn cấu hình VLANs, Trunking và VLANs routing trên GNS3#
 
 ##1.	Mô hình bài lab: 
-4 Switch trong đó switch L3-SW-1 và L3-SW-2 được kết nối với nhau và sử dụng etherchannel port. L3-SW1 đóng vai trò là VTP server, các switch còn lại đóng vai trò VTP client. VLANs sẽ được tạo trên Switch L3-SW1 (vtp server) sau đó sẽ update xuống các switch còn lại (vtp client).
-http://imgur.com/a/zVW8c
+4 Switch trong đó switch L3-SW-1 và L3-SW-2 được kết nối với nhau và sử dụng etherchannel port. L3-SW1 đóng vai trò là VTP server, các switch còn lại đóng vai trò VTP client. VLANs sẽ được tạo trên Switch L3-SW1 (vtp server) sau đó sẽ update xuống các switch còn lại (vtp client).,
+<img srrc="http://imgur.com/a/zVW8c">
 
 ##2.	Triển khai cấu hình :
 -	Download và cài đặt GNS3
