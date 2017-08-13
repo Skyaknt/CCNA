@@ -12,9 +12,11 @@ Kéo thả các thiết bị cần thiết vào :  4 VPCS, 2 L2-SW, 2 L3-SW, 1 R
 -	L3-SW1 đóng vai trò là VTP Client , Vlans sẽ được tạo trên nó rồi update xuống các switch còn lại
 -	Tiến hành nối dây các thiết bị với nhau theo sơ đồ 
 -	Cấu hình VTP cho Switch:
+
 <ul>
-<li>Bước 1. Cấu hình VTP cho các switch</li>
+<li> Bước 1. Cấu hình VTP cho các switch </li>
 + *Cấu hình VTP mode server và domain cisco trên Switch L3-SW1*
+
 ` L3-SW1(config)#hostname L3-SW1
 L3-SW1(config)#vtp mode server
 L3-SW1(config)#vtp domain cisco
@@ -22,23 +24,28 @@ L3-SW1(config)#vtp password cisco
 L3-SW1(config)#vtp pruning `
 
 +*Cấu hình VTP mode client trên switch L2-SW1 và L2-SW2 và L3-SW2*
+
 `L2-SW1(config)#hostname L2-SW1
 L2-SW1(config)#vtp mode client
 L2-SW1(config)#vtp domain cisco
 L2-SW1(config)#vtp password cisco`
 
 *Switch L2-SW2*
+
 `L2-SW2(config)#hostname L2-SW2
 L2-SW2(config)#vtp mode client
 L2-SW2(config)#vtp domain cisco
 L2-SW2(config)#vtp password cisco`
 
 *Switch L3-SW2*
+
 `L3-SW2(config)#hostname L3-SW2
 L3-SW2(config)#vtp mode client
 L3-SW2(config)#vtp domain cisco
 L3-SW2(config)#vtp password cisco`
+
 <li> Bước 2: Cấu hình VLAN trên VTP server ( L3-SW1 ) </li>
+
 `L3-SW1#config t
 L3-SW1(config)#vlan 10
 L3-SW1(config-vlan)#name HR
@@ -46,8 +53,11 @@ L3-SW1(config)#vlan 20
 L3-SW1(config-vlan)#name ADMIN
 L3-SW1(config)#vlan 30
 L3-SW1(config-vlan)#name IT`
+
 *Kiểm tra cấu hình vlan trên VTP mode Server ( L3-SW1 ) và VTP mode client ( L2-SW1 )*
+
 *L3-SW1#show vlan brief*
+
 ```VLAN Name                             Status    Ports
 ---- -------------------------------- --------- -------------------------------
 1    default                          active    Gi0/2, Gi0/3, Gi1/0, Gi1/1
@@ -79,21 +89,26 @@ VLAN Name                             Status    Ports
 1003 trcrf-default                    act/unsup
 1004 fddinet-default                  act/unsup
 1005 trbrf-default                    act/unsup```
+
 <li> Bước 3: Cấu hình trunk port trên các switch </li>
 
+
 *Switch L2-SW1*
+
 `L2-SW1(config)#interface range G0/0,G0/3
 L2-SW1(config-if-range)#switchport trunk encapsulation dot1q
 L2-SW1(config-if-range)#switchport mode trunk
 L2-SW1(config-if-range)#switchport trunk allowed vlan 10,20,30`
 
 *Switch L2-SW2*
+
 `L2-SW2(config)#interface range G0/0,G0/3
 L2-SW2(config-if-range)#switchport trunk encapsulation dot1q
 L2-SW2(config-if-range)#switchport mode trunk
 L2-SW2(config-if-range)#switchport trunk allowed vlan 10,20,30`
 
 *Switch L3-SW1*
+
 + *Cấu hình etherchannel* 
 
 `L3-SW1(config)#interface range G0/1 - 2
@@ -102,6 +117,7 @@ L3-SW1(config-if-range)#channel-group 1 mode active
 Creating a port-channel interface Port-channel 1`
 
 + *Kiểm tra cấu hình etherchannel*
+
 `L3-SW1(config)#interface range G0/1 - 2
 L3-SW1(config-if-range)#channel-protocol lacp
 L3-SW1(config-if-range)#channel-group 1 mode active
@@ -128,6 +144,7 @@ Port-channel1 is up, line protocol is up (connected)
 
 
 + *Cấu hình trunking *
+
 `L3-SW1(config)#interface range G0/0, G0/3, G0/1-2, Po1
 L3-SW1(config-if-range)#switchport trunk encapsulation dot1q
 L3-SW1(config-if-range)#switchport mode trunk
@@ -137,12 +154,14 @@ L3-SW1(config-if-range)#no shut`
 *Switch L3-SW2*
 
 + *Cấu hình etherchannel *
+
 `L2-SW2(config)#interface range G0/1 - 2
 L2-SW2(config-if-range)#channel-protocol lacp
 L2-SW2(config-if-range)#channel-group 1 mode passive
 Creating a port-channel interface Port-channel 1`
 
 + *Kiểm tra etherchannel*
+
 `L2-SW2#show etherchannel summary`
 
 ```Group  Port-channel  Protocol    Ports
@@ -156,11 +175,13 @@ GigabitEthernet0/2     unassigned      YES unset  up                    up
 Port-channel1             unassigned      YES unset  up                    up```
 
 *L2-SW2#show interface Po 1*
+
 `Port-channel1 is up, line protocol is up (connected)
   Hardware is GigabitEthernet, address is 00d3.84a7.0405 (bia 00d3.84a7.0405)
   MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,`
  
 + *Cấu hình trunk port* 
+
 `L3-SW2(config-if-range)#int range G0/0,G0/3, G0/1-2, Po1
 L3-SW2(config-if-range)#switchport trunk encapsulation dot1q
 L3-SW2(config-if-range)#switchport mode trunk
@@ -168,7 +189,7 @@ L3-SW2(config-if-range)#switchport trunk allowed vlan 10,20,30
 L3-SW2(config-if-range)#no shut`
 
 
-<li>Bước 4:  Cấu hình VLANs routing và switch access vlan trên switch L3-SW1, L2-SW1 và L2-SW2 </li>
+<li> Bước 4:  Cấu hình VLANs routing và switch access vlan trên switch L3-SW1, L2-SW1 và L2-SW2 </li>
 `L3-SW1(config)#int vlan 10
 L3-SW1(config-if)#ip add 192.168.10.1 255.255.255.0
 L3-SW1(config)#int vlan 20
@@ -179,6 +200,7 @@ ip add 192.168.30.1 255.255.255.0`
 *L3-SW1(config)#ip routing*
 
 + *Cấu hình Switch access vlan interfaces trên L2-SW1 & L2-SW2*
+
 `L2-SW1(config)#int G0/1
 L2-SW1(config-if)#switchport mode access
 L2-SW1(config-if)#switchport access vlan 10
@@ -194,6 +216,7 @@ L2-SW2(config-if)#switchport mode access
 L2-SW2(config-if)#switchport access vlan 20`
 
 <li>Bước 5: Cấu hình địa chỉ ip address cho các PC</li>
+
 `PC1> ip 192.168.10.10/24 192.168.10.1
 Checking for duplicate address...
 PC1 : 192.168.10.10 255.255.255.0 gateway 192.168.10.1`
@@ -202,12 +225,13 @@ Checking for duplicate address...`
 `PC2 : 192.168.20.10 255.255.255.0 gateway 192.168.20.1`
 `PC3> ip 192.168.10.20/24 192.168.10.1
 Checking for duplicate address...`
-PC3 : 192.168.10.20 255.255.255.0 gateway 192.168.10.1`
+`PC3 : 192.168.10.20 255.255.255.0 gateway 192.168.10.1`
 `PC4> ip 192.168.20.20/24 192.168.20.1
 Checking for duplicate address...`
-PC4 : 192.168.20.20 255.255.255.0 gateway 192.168.20.1`
+`PC4 : 192.168.20.20 255.255.255.0 gateway 192.168.20.1`
 
 <li>Bước 6: Kiểm tra kết quả từ PC1 ta thấy ping giữa VLAN 10 và VLAN 20 thành công -> VLAN routing successful </li>
+
 `PC1> ping 192.168.10.1
 84 bytes from 192.168.10.1 icmp_seq=1 ttl=255 time=34.002 ms
 84 bytes from 192.168.10.1 icmp_seq=2 ttl=255 time=53.003 ms
