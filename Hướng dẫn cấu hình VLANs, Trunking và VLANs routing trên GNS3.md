@@ -1,10 +1,10 @@
-#Hướng dẫn cấu hình VLANs, Trunking và VLANs routing trên GNS3#
+# Hướng dẫn cấu hình VLANs, Trunking và VLANs routing trên GNS3 
 
-##1.	Mô hình bài lab: 
+## 1.	Mô hình bài lab: 
 4 Switch trong đó switch L3-SW-1 và L3-SW-2 được kết nối với nhau và sử dụng etherchannel port. L3-SW1 đóng vai trò là VTP server, các switch còn lại đóng vai trò VTP client. VLANs sẽ được tạo trên Switch L3-SW1 (vtp server) sau đó sẽ update xuống các switch còn lại (vtp client).,
 <img src="http://imgur.com/a/zVW8c">
 
-##2.	Triển khai cấu hình :
+## 2.	Triển khai cấu hình :
 -	Download và cài đặt GNS3
 http://itlabvn.net/phan-cung-mang/huong-dan-su-dung-phan-men-gia-lap-routers-switch-gns3
 -	Tạo 1 project mới : File => New blank project => đặt tên là Trunking project
@@ -14,14 +14,14 @@ Kéo thả các thiết bị cần thiết vào :  4 VPCS, 2 L2-SW, 2 L3-SW, 1 R
 -	Cấu hình VTP cho Switch:
 <ul>
 <li>Bước 1. Cấu hình VTP cho các switch</li>
-*+ Cấu hình VTP mode server và domain cisco trên Switch L3-SW1*
++ *Cấu hình VTP mode server và domain cisco trên Switch L3-SW1*
 ` L3-SW1(config)#hostname L3-SW1
 L3-SW1(config)#vtp mode server
 L3-SW1(config)#vtp domain cisco
 L3-SW1(config)#vtp password cisco
 L3-SW1(config)#vtp pruning `
 
-*+Cấu hình VTP mode client trên switch L2-SW1 và L2-SW2 và L3-SW2*
++*Cấu hình VTP mode client trên switch L2-SW1 và L2-SW2 và L3-SW2*
 `L2-SW1(config)#hostname L2-SW1
 L2-SW1(config)#vtp mode client
 L2-SW1(config)#vtp domain cisco
@@ -94,21 +94,20 @@ L2-SW2(config-if-range)#switchport mode trunk
 L2-SW2(config-if-range)#switchport trunk allowed vlan 10,20,30`
 
 *Switch L3-SW1*
-*+ Cấu hình etherchannel* 
++ *Cấu hình etherchannel* 
 
 `L3-SW1(config)#interface range G0/1 - 2
 L3-SW1(config-if-range)#channel-protocol lacp
 L3-SW1(config-if-range)#channel-group 1 mode active
 Creating a port-channel interface Port-channel 1`
 
-*+ Kiểm tra cấu hình etherchannel*
++ *Kiểm tra cấu hình etherchannel*
 `L3-SW1(config)#interface range G0/1 - 2
 L3-SW1(config-if-range)#channel-protocol lacp
 L3-SW1(config-if-range)#channel-group 1 mode active
 Creating a port-channel interface Port-channel 1`
 
-
-*+ Kiểm tra cấu hình etherchannel*
++ *Kiểm tra cấu hình etherchannel*
 
 `L3-SW1#show etherchannel summary`
 
@@ -128,7 +127,7 @@ Port-channel1 is up, line protocol is up (connected)
  
 
 
-*+ Cấu hình trunking *
++ *Cấu hình trunking *
 `L3-SW1(config)#interface range G0/0, G0/3, G0/1-2, Po1
 L3-SW1(config-if-range)#switchport trunk encapsulation dot1q
 L3-SW1(config-if-range)#switchport mode trunk
@@ -137,13 +136,13 @@ L3-SW1(config-if-range)#no shut`
 
 *Switch L3-SW2*
 
-*+ Cấu hình etherchannel *
++ *Cấu hình etherchannel *
 `L2-SW2(config)#interface range G0/1 - 2
 L2-SW2(config-if-range)#channel-protocol lacp
 L2-SW2(config-if-range)#channel-group 1 mode passive
 Creating a port-channel interface Port-channel 1`
 
-*+ Kiểm tra etherchannel*
++ *Kiểm tra etherchannel*
 `L2-SW2#show etherchannel summary`
 
 ```Group  Port-channel  Protocol    Ports
@@ -161,7 +160,7 @@ Port-channel1             unassigned      YES unset  up                    up```
   Hardware is GigabitEthernet, address is 00d3.84a7.0405 (bia 00d3.84a7.0405)
   MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,`
  
-*+ Cấu hình trunk port* 
++ *Cấu hình trunk port* 
 `L3-SW2(config-if-range)#int range G0/0,G0/3, G0/1-2, Po1
 L3-SW2(config-if-range)#switchport trunk encapsulation dot1q
 L3-SW2(config-if-range)#switchport mode trunk
@@ -179,7 +178,7 @@ ip add 192.168.30.1 255.255.255.0`
 
 *L3-SW1(config)#ip routing*
 
-*+ Cấu hình Switch access vlan interfaces trên L2-SW1 & L2-SW2*
++ *Cấu hình Switch access vlan interfaces trên L2-SW1 & L2-SW2*
 `L2-SW1(config)#int G0/1
 L2-SW1(config-if)#switchport mode access
 L2-SW1(config-if)#switchport access vlan 10
