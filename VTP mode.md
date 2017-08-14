@@ -21,7 +21,7 @@ Việc cấu hình VLAN có thể sẽ sảy ra 2 vấn đề sau: </br>
 <hr>
 1.	Chế độ VTP:
 Khi triển khai VTP trên hệ thống, bạn sẽ có ba sự lựa chọn chế độ làm việc cho Switch của mình: Server, Client và Transparent. Tùy thuộc vào mục đích quản trị và hạ tầng mạng mà ta lựa chọn sao cho hợp lý. Bảng sau đây tóm tắt sự khác nhau giữa ba chế độ làm việc:
- 
+ ![Sự khác nhau giữa các mode] (http://i.imgur.com/e0zqi9g.png)
 
  
 •	Chế độ Server
