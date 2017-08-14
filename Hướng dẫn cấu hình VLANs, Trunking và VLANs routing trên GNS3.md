@@ -122,7 +122,7 @@ L2-SW2(config-if-range)#switchport trunk allowed vlan 10,20,30
 
 * Switch L3-SW1
 
-* Cấu hình etherchannel
+- Cấu hình etherchannel
 
 ```
 L3-SW1(config)#interface range G0/1 - 2
@@ -131,7 +131,7 @@ L3-SW1(config-if-range)#channel-group 1 mode active
 Creating a port-channel interface Port-channel 1
 ```
 
-* Kiểm tra cấu hình etherchannel
+- Kiểm tra cấu hình etherchannel
 
 ```
 L3-SW1(config)#interface range G0/1 - 2
@@ -140,7 +140,7 @@ L3-SW1(config-if-range)#channel-group 1 mode active
 Creating a port-channel interface Port-channel 1
 ```
 
-* Kiểm tra cấu hình etherchannel
+- Kiểm tra cấu hình etherchannel
 
 `L3-SW1#show etherchannel summary`
 
@@ -181,16 +181,16 @@ L3-SW2(config-if-range)#switchport trunk allowed vlan 10,20,30
 L3-SW2(config-if-range)#no shut
 ```
 
-* Cấu hình etherchannel 
+- Cấu hình etherchannel 
 
 ```
-L2-SW2(config)#interface range G0/1 - 2
-L2-SW2(config-if-range)#channel-protocol lacp
-L2-SW2(config-if-range)#channel-group 1 mode passive
+L3-SW2(config)#interface range G0/1 - 2
+L3-SW2(config-if-range)#channel-protocol lacp
+L3-SW2(config-if-range)#channel-group 1 mode passive
 Creating a port-channel interface Port-channel 1
 ```
 
-* Kiểm tra etherchannel
+- Kiểm tra etherchannel
 
 `L2-SW2#show etherchannel summary`
 
