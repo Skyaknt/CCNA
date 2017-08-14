@@ -234,7 +234,7 @@ L3-SW1(config)#int vlan 30
 ip add 192.168.30.1 255.255.255.0
 ```
 
-* L3-SW1(config)#ip routing\
+* L3-SW1(config)#ip routing
 
 * Cấu hình Switch access vlan interfaces trên L2-SW1 & L2-SW2
 
