@@ -1,23 +1,24 @@
 
 
 
-Khái niệm và phân loại VTP mode
+# Khái niệm và phân loại VTP mode
 
-Phụ lục:
-1.	Chế độ VTP
-1.1	Tạo bản tin VTP
-1.2	Lắng nghe bản tin VTP
-1.3	Tạo, xóa , sửa Vlan
-2.	So sánh phương thức làm việc giữa các mode
-2.1	Server mode
-2.2	Client mode
-2.3	Transparent mode
+## Phụ lục:
+### 1.	Chế độ VTP
+  #### 1.1	Tạo bản tin VTP
+  #### 1.2	Lắng nghe bản tin VTP
+  #### 1.3	Tạo, xóa , sửa Vlan
+### 2.	So sánh phương thức làm việc giữa các mode
+  #### 2.1	Server mode
+  #### 2.2	Client mode
+  #### 2.3	Transparent mode
 
 
 VTP viết tắt của từ VLAN Trunking Protocol là giao thức độc quyền của Cisco hoạt động ở lớp 2 của mô hình OSI. VTP giúp cho việc cấu hình VLAN luôn đồng nhất khi thêm, xóa, sửa thông tin về VLAN trong một hệ thống mạng. VTP được thiết lập để giải quyết các vấn đề nằm bên trong hoạt động của môi trường mạng VLAN. Ví dụ: Một hệ thống có các kết nối Switch hỗ trợ bởi các VLAN. Để thiết lập và duy trì kết nối bên trong VLAN , mỗi VLAN phải được cấu hình thông suốt trên tất cả các Switch. Khi phát triển mạng và các Switch được thêm vào mạng, mỗi Switch mới phải được cấu hình với các thông tin của VLAN trước đó.
-Việc cấu hình VLAN có thể sẽ sảy ra 2 vấn đề sau:
-– Các kết nối chồng chéo lên nhau do cấu hình VLAN không đúng.
-– Các cấu hình không đúng giữa các môi trường truyền khác nhau.
+Việc cấu hình VLAN có thể sẽ sảy ra 2 vấn đề sau: </br>
+– **Các kết nối chồng chéo lên nhau do cấu hình VLAN không đúng.</br>
+– Các cấu hình không đúng giữa các môi trường truyền khác nhau.**
+<hr>
 1.	Chế độ VTP:
 Khi triển khai VTP trên hệ thống, bạn sẽ có ba sự lựa chọn chế độ làm việc cho Switch của mình: Server, Client và Transparent. Tùy thuộc vào mục đích quản trị và hạ tầng mạng mà ta lựa chọn sao cho hợp lý. Bảng sau đây tóm tắt sự khác nhau giữa ba chế độ làm việc:
  
