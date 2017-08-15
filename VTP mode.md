@@ -14,11 +14,16 @@
   #### 2.3	Transparent mode
 
 ```
-** VTP là gì? **
-VTP viết tắt của từ VLAN Trunking Protocol là giao thức độc quyền của Cisco hoạt động ở lớp 2 của mô hình OSI. VTP giúp cho việc cấu hình VLAN luôn đồng nhất khi thêm, xóa, sửa thông tin về VLAN trong một hệ thống mạng. VTP được thiết lập để giải quyết các vấn đề nằm bên trong hoạt động của môi trường mạng VLAN. Ví dụ: Một hệ thống có các kết nối Switch hỗ trợ bởi các VLAN. Để thiết lập và duy trì kết nối bên trong VLAN , mỗi VLAN phải được cấu hình thông suốt trên tất cả các Switch. Khi phát triển mạng và các Switch được thêm vào mạng, mỗi Switch mới phải được cấu hình với các thông tin của VLAN trước đó.
+VTP là gì?
+VTP viết tắt của từ VLAN Trunking Protocol là giao thức độc quyền của Cisco hoạt động ở lớp 2 của mô hình OSI.
+VTP giúp cho việc cấu hình VLAN luôn đồng nhất khi thêm, xóa, sửa thông tin về VLAN trong một hệ thống mạng. 
+VTP được thiết lập để giải quyết các vấn đề nằm bên trong hoạt động của môi trường mạng VLAN. 
+Ví dụ: Một hệ thống có các kết nối Switch hỗ trợ bởi các VLAN. Để thiết lập và duy trì kết nối bên trong VLAN ,
+mỗi VLAN phải được cấu hình thông suốt trên tất cả các Switch. Khi phát triển mạng và các Switch được thêm vào
+mạng, mỗi Switch mới phải được cấu hình với các thông tin của VLAN trước đó.
 Việc cấu hình VLAN có thể sẽ sảy ra 2 vấn đề sau: </br>
-– **Các kết nối chồng chéo lên nhau do cấu hình VLAN không đúng.</br>
-– Các cấu hình không đúng giữa các môi trường truyền khác nhau.**
+– Các kết nối chồng chéo lên nhau do cấu hình VLAN không đúng.
+– Các cấu hình không đúng giữa các môi trường truyền khác nhau.
 ```
 
 ### 1.	Chế độ VTP:
