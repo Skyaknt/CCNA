@@ -21,7 +21,7 @@ Việc cấu hình VLAN có thể sẽ sảy ra 2 vấn đề sau: </br>
 
 ### 1.	Chế độ VTP:
 Khi triển khai VTP trên hệ thống, bạn sẽ có ba sự lựa chọn chế độ làm việc cho Switch của mình: Server, Client và Transparent. Tùy thuộc vào mục đích quản trị và hạ tầng mạng mà ta lựa chọn sao cho hợp lý. Bảng sau đây tóm tắt sự khác nhau giữa ba chế độ làm việc:
- ![Sự khác nhau giữa các mode] (http://i.imgur.com/e0zqi9g.png)
+![Sự khác nhau giữa các mode](http://i.imgur.com/e0zqi9g.png)
 
 * Chế độ Server
 
@@ -34,18 +34,18 @@ Các sever VTP sẽ điều khiển việc tạo VLAN và thay đổi miền c�
 * Chế độ Client
 
 Các VTP chế độ này không cho phép tạo, chỉnh sửa và xóa bất cứ VLAN mà nó lắng nghe các quảng bá VTP từ các Switch khác và thay đổi cấu hình VLAN một cách thích hợp. Đây là chế độ lắng nghe thụ động. Các thông tin VTP được chuyển tiếp ra liên kết trunk đến các Switch lân cận trong miền.
--	Chuyển tiếp thông tin quảng bá
--	Đồng bộ hóa thông tin VLAN
--	Không lưu cấu hình vào NVRAM
+  -	Chuyển tiếp thông tin quảng bá
+  -	Đồng bộ hóa thông tin VLAN
+  -	Không lưu cấu hình vào NVRAM
 
 * Chế độ Transparent
 
 Ở chế độ này, một Switch không quảng bá cấu hình VLAN của chính nó và không đồng bộ cơ sở dữ liệu VLAN của nó với thông tin VLAN nhận được. Trong phiên bản 1, Switch hoạt động ở chế độ này không chuyển tiếp thông tin quảng bá VTP nhận được đến các Switch khác, trừ khi tên miền và số phiên bản VTP của nó khớp với các Switch khác. Trong phiên bản 2, Switch hoạt động ở chế độ này chuyển tiếp thông tin quảng bá VTP nhận được ra cổng trunk của nó
 Chú ý: Switch hoạt động ở chế độ Transparent có thể tạo và xóa VLAN cục bộ. Tuy nhiên các thay đổi của VLAN không được truyền đến bất cứ Switch nào.
--	Có thể tạo, chính sửa và xóa VLAN
--	Chuyển tiếp thông tin quảng bá
--	Không đồng bộ hóa thông tin VLAN
--	Lưu cấu hình vào NVRAM
+  -	Có thể tạo, chính sửa và xóa VLAN
+  -	Chuyển tiếp thông tin quảng bá
+  -	Không đồng bộ hóa thông tin VLAN
+  -	Lưu cấu hình vào NVRAM
 
 ### 2.So sánh các chế độ làm việc của Switch khi chạy VTP
 
