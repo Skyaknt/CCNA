@@ -1,35 +1,49 @@
 
-
-
 # Truyền thông qua mạng
 
-## I. Nội dung chính 
-
-### 1. Nền tảng của truyền thông
-
-### 2. Các bước truyền thông qua mạng
-### 3. Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông
-### 4. Tìm hiểu về giao thức (Protocol) trong truyền thông.
-### 5. Mô hình OSI là gì? tại sao phải phân lớp?
-### 6. Địa chỉ mạng là gì?
+## I. Nội dung chính:
+ ### 1. Nền tảng của truyền thông
+ ### 2. Các bước truyền thông qua mạng
+ ### 3. Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông
+ ### 4. Tìm hiểu về giao thức (Protocol) trong truyền thông.
+ ### 5. Mô hình OSI là gì? tại sao phải phân lớp?
+ ### 6. Địa chỉ mạng là gì?
 
 ## II. Nội dung chi tiết: 
 
-1. Nền tảng của truyền thông: để các máy tính và các thiết bị trong mạng truyền thông được với nhau thì hệ thống mạng phải có phần cứng và phần mềm. Từ phần cứng và phần mềm ta chia thành 4 thành phần: 
-+ Thiết bị đầu cuối: máy tính, laptop, Server, điện thoại…. Các thiết bị này đều phải cài đặt Hệ điều hành hoặc phần mềm.
-+ Đường truyền: dây, Switch, Router, Modem được kết nối lại với nhau. Để kết nối gần ta dùng dây cáp đồng, kết nối xa thì dùng dây cáp quang hoặc dùng sóng vệ tinh.
-+ Thông tin: nội dung website, thư điện tử, nội dung chat... Dữ liệu này này sẽ được chia thành các mảnh để đưa vào đường truyền gọi là Segment. Để trao đổi được thông tin thì phải có người gửi và người nhận. 
-+ Giao thức (rule): cho phép truy cập tới dịch vụ gì, được đi theo đường nào, dữ liệu được tải ra sao, giao thức nào được áp dụng là gì. Vd: truyền theo Web phải sử dụng theo port 80 hoặc 443.
-2. Các bước truyền thông qua mạng: 
+### 1. Nền tảng của truyền thông: để các máy tính và các thiết bị trong mạng truyền thông được với nhau thì hệ thống
+mạng phải có phần cứng và phần mềm. Từ phần cứng và phần mềm ta chia thành 4 thành phần: 
+- Thiết bị đầu cuối: máy tính, laptop, Server, điện thoại…. Các thiết bị này đều phải cài đặt Hệ điều hành hoặc phần mềm.
+- Đường truyền: dây, Switch, Router, Modem được kết nối lại với nhau. Để kết nối gần ta dùng dây cáp đồng, 
+kết nối xa thì dùng dây cáp quang hoặc dùng sóng vệ tinh.
+- Thông tin: nội dung website, thư điện tử, nội dung chat... Dữ liệu này này sẽ được chia thành các mảnh để đưa 
+vào đường truyền gọi là Segment. Để trao đổi được thông tin thì phải có người gửi và người nhận. 
+- Giao thức (rule): cho phép truy cập tới dịch vụ gì, được đi theo đường nào, dữ liệu được tải ra sao,
+giao thức nào được áp dụng là gì. Vd: truyền theo Web phải sử dụng theo port 80 hoặc 443.
+### 2. Các bước truyền thông qua mạng: 
 Xét trường hợp cụ thể là truy cập vào trang Google.
-=> Bước 1: mở trình duyệt IE hoặc Firefox trên máy tính gõ : http://google.com. Do IE là phần mềm sử dụng giao thức http, https (port 80, 443). Bộ giao thức này nằm ở tầng Application. Ai muốn viết phần mềm hoặc lập trình web thì phải tuân thủ.
+=> Bước 1: mở trình duyệt IE hoặc Firefox trên máy tính gõ : http://google.com.
+Do IE là phần mềm sử dụng giao thức http, https (port 80, 443). Bộ giao thức này nằm ở tầng Application.
+Ai muốn viết phần mềm hoặc lập trình web thì phải tuân thủ.
 => Bước 2:  yêu cầu được nhập vào là ký tự trên bàn phím, máy tính sẽ chuyển đổi ra tín hiệu nhị phân (bit 0, 1) để cho máy tính hiểu. Để chuyển đổi được thì máy tính có hẳn riêng một bộ phận làm phiên dịch là tầng Presentation.
-=> Bước 3: Trước yêu cầu được truyền đi máy tính sẽ có một bộ phận đàm phán phiên để truyền gọi là Session. Session ở đây nó sẽ tạo ra một kết nối trực tiếp tới Server google, được Server google đồng ý nó mới truyền yêu cầu. Sau khi kết thúc phiên nó sẽ đóng kết nối.
-=> Bước 4: Để yêu cầu đi được (yêu cầu là dữ liệu) thì phải có bộ phận đóng gói dữ liệu đó là tầng Transport. Transport sẽ nhận dữ liệu từ Port 80 của giao thức http đi từ tầng Application xuống rồi đóng thêm giao thức để truyền thông là TCP hay UDP để truyền. Giao thức TCP ở tầng Transport có nhiệm vụ băm nhỏ dữ liệu ra thành các Segment (data và header). Trong header có cổng nguồn và cổng đích. Các Segment sẽ chuyển xuống tầng Network để xử lý (dữ liệu từ tầng này trở lên là độc lập với đường truyền). 
-=> Bước 5: Tầng Network sẽ sử dụng IPv4 và IPv6 nhưng chủ yếu là IPv4. Khi các Segment đưa xuống sẽ đóng vào gói Data lớn hơn. Trong này sẽ có IP nguồn và IP đích (địa chỉ máy gửi là máy mình và địa chỉ máy nhận là địa chỉ Server Google). Sau đó sẽ đưa xống bên dưới là tầng Data Link.
+=> Bước 3: Trước yêu cầu được truyền đi máy tính sẽ có một bộ phận đàm phán phiên để truyền gọi là Session.
+Session ở đây nó sẽ tạo ra một kết nối trực tiếp tới Server google, được Server google đồng ý nó mới truyền yêu cầu.
+Sau khi kết thúc phiên nó sẽ đóng kết nối.
+=> Bước 4: Để yêu cầu đi được (yêu cầu là dữ liệu) thì phải có bộ phận đóng gói dữ liệu đó là tầng Transport.
+Transport sẽ nhận dữ liệu từ Port 80 của giao thức http đi từ tầng Application xuống rồi đóng thêm giao thức để 
+truyền thông là TCP hay UDP để truyền. Giao thức TCP ở tầng Transport có nhiệm vụ băm nhỏ dữ liệu ra thành 
+các Segment (data và header). Trong header có cổng nguồn và cổng đích. Các Segment sẽ chuyển xuống tầng Network 
+để xử lý (dữ liệu từ tầng này trở lên là độc lập với đường truyền). 
+=> Bước 5: Tầng Network sẽ sử dụng IPv4 và IPv6 nhưng chủ yếu là IPv4. Khi các Segment đưa xuống sẽ đóng vào gói Data lớn hơn.
+Trong này sẽ có IP nguồn và IP đích (địa chỉ máy gửi là máy mình và địa chỉ máy nhận là địa chỉ Server Google).
+Sau đó sẽ đưa xống bên dưới là tầng Data Link.
 => Bước 6: Data link đóng vào địa chỉ MAC ( MAC nguồn và MAC đích). MAC của máy PC1 và MAC cổng Gateway. Data link sẽ đóng vào đầu là Header và cuối là Trailer. Sau đó đưa xuống đường vật lí (physical).
 => Bước 7: Đường vật lí là tín hiệu điện 0,1 được gửi đi (tín hiệu điệns này khác với tín hiệu điện dữ liệu)
-=> Bước 8: Sau khi gửi ra Router thì nó sẽ nhận các tín hiệu và đóng gói rồi phân tích địa chỉ MAC. Router sẽ xem địa chỉ MAC đích là ai nếu đúng nó sẽ xác định để xử lý. Nếu đúng nó tách ra và đưa lên tầng Network để xác định địa chỉ IP của đích tới. Sau khi xác định xong sẽ đóng gói lại và chuyển ra cổng bên ngoài. Router sẽ sử dụng bảng định tuyến để gửi ra đúng cổng cần chuyển. Tương tự các thiết bị Router kế tiếp sẽ nhận và gửi đi sau đó gửi tới đích là Server Google.
+=> Bước 8: Sau khi gửi ra Router thì nó sẽ nhận các tín hiệu và đóng gói rồi phân tích địa chỉ MAC. 
+Router sẽ xem địa chỉ MAC đích là ai nếu đúng nó sẽ xác định để xử lý. Nếu đúng nó tách ra và đưa lên tầng 
+Network để xác định địa chỉ IP của đích tới. Sau khi xác định xong sẽ đóng gói lại và chuyển ra cổng bên ngoài.
+Router sẽ sử dụng bảng định tuyến để gửi ra đúng cổng cần chuyển. 
+Tương tự các thiết bị Router kế tiếp sẽ nhận và gửi đi sau đó gửi tới đích là Server Google.
 => Bước 9: Sau khi xử lý Server sẽ gửi lại dữ liệu yêu cầu vào đường truyền. 
 => Bước 10: Sau khi dữ liệu tới đích nó sẽ gửi lên cửa sổ IE và kết thúc quá trình truyền thông.
 ### 3. Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông: 
@@ -39,12 +53,18 @@ Xét trường hợp cụ thể là truy cập vào trang Google.
 + Các nhà cung cấp dịch vụ sẽ liên kết Router lại với nhau để chuyển đi quốc tế.
 + Trên Các Router có bảng định tuyến để định đúng đường đi. 
 ### 4. Tìm hiểu về giao thức (Protocol) trong truyền thông: 
-+ Giao thức dùng để định dạng cấu trúc của gói tin. Gói tin đi theo Web thì phải theo định dạng của Web, Mail định dạng theo Mail... Do đó trên tầng ứng dụng có thể dùng cùng lúc nhiều dịch vụ mà không sợ xung đột nhau.
-+ Cho phép truy cập tới đâu: thông qua giao thức chúng ta có thể điều hướng người dùng truy cập tới Server trong công ty hay truy cập ra Server bên ngoài internet. Truy cập tới dịch vụ này hay tới dịch vụ khác.
-+ Được tải những phần dữ liệu nào: trong hệ thống có nhiều phòng ban, dựa vào giao thức ta có thể phân quyền truy cập tài nguyên. Người dùng có thể copy dữ liệu trên phòng ban của mình hoặc cả phòng ban khác.
-+ Cho phép truyền hoặc tải bao nhiêu dữ liệu qua đường truyền: đường truyền là 100Mbps/s chúng ta có thể giới hạn tải xuống 20Mbps hoặc 50Mbps.
++ Giao thức dùng để định dạng cấu trúc của gói tin. Gói tin đi theo Web thì phải theo định dạng của Web,
+Mail định dạng theo Mail... Do đó trên tầng ứng dụng có thể dùng cùng lúc nhiều dịch vụ mà không sợ xung đột nhau.
++ Cho phép truy cập tới đâu: thông qua giao thức chúng ta có thể điều hướng người dùng truy cập tới Server 
+trong công ty hay truy cập ra Server bên ngoài internet. Truy cập tới dịch vụ này hay tới dịch vụ khác.
++ Được tải những phần dữ liệu nào: trong hệ thống có nhiều phòng ban, dựa vào giao thức ta có thể 
+phân quyền truy cập tài nguyên. Người dùng có thể copy dữ liệu trên phòng ban của mình hoặc cả phòng ban khác.
++ Cho phép truyền hoặc tải bao nhiêu dữ liệu qua đường truyền: đường truyền là 100Mbps/s chúng ta có thể giới 
+hạn tải xuống 20Mbps hoặc 50Mbps.
 ### 5.  Tại sao phải phân lớp? Mô hình OSI là gì? 
-a. Mô hình OSI là: Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối các hệ thống mở, là một mô hình phân lớp nổi tiếng. Được phác thảo vào năm 1971 và hoàn thiện vào năm 1984. Mô hình này chia thành 7 lớp: Application, Presentation, Session, Transport, Network, Data link, Physical.
+a. Mô hình OSI là: Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối các hệ thống mở, 
+là một mô hình phân lớp nổi tiếng. Được phác thảo vào năm 1971 và hoàn thiện vào năm 1984. 
+Mô hình này chia thành 7 lớp: Application, Presentation, Session, Transport, Network, Data link, Physical.
 
 ![](http://i.imgur.com/GrKNO9p.png)
  	 	 
@@ -63,23 +83,7 @@ b. Tại sao phải phân lớp: để truyền thông được chúng ta phải
 => Thúc đẩy kỹ thuật module hóa: ai mạnh về lớp nào sẽ sản suất chuyên môn lớp đó. => Thúc đẩy phát triển của công nghệ
 => Người dùng dễ học hơn: không phải học hết cả 7 lớp một lúc mà học lần lượt đều được.	
 
-
-
-OSI(Open System Interconnection)	TCP/IP(Transmission Control Protocol / Internet Protocol)
-1. OSI is a generic, protocol independent standard, acting as a communication gateway between the network and end user.	1. TCP/IP model is based on standard protocols around which the Internet has developed. It is a communication protocol, which allows connection of hosts over a network.
-2. In OSI model the transport layer guarantees the delivery of packets.	2. In TCP/IP model the transport layer does not guarantees delivery of packets. Still the TCP/IP model is more reliable.
-3. Follows vertical approach.	3. Follows horizontal approach.
-4. OSI model has a separate Presentation layer and Session layer.	4. TCP/IP does not have a separate Presentation layer or Session layer.
-5. OSI is a reference model around which the networks are built. Generally it is used as a guidance tool.	5. TCP/IP model is, in a way implementation of the OSI model.
-6. Network layer of OSI model provides both connection oriented and connectionless service.	6. The Network layer in TCP/IP model provides connectionless service.
-7. OSI model has a problem of fitting the protocols into the model.	7. TCP/IP model does not fit any protocol
-8. Protocols are hidden in OSI model and are easily replaced as the technology changes.	8. In TCP/IP replacing protocol is not easy.
-9. OSI model defines services, interfaces and protocols very clearly and makes clear distinction between them. It is protocol independent.	9. In TCP/IP, services, interfaces and protocols are not clearly separated. It is also protocol dependent.
-10. It has 7 layers	10. It has 4 layers
-
-
-
- 
+![](http://i.imgur.com/tEDepN2.png) 
 
 6. Địa chỉ mạng là: trong hệ thống mạng chúng ta có 2 loại địa chỉ là địa chỉ IP và địa chỉ MAC
 + Địa chỉ IP(Internet Protocol): là chỉ của một máy tính khi tham gia vào mạng nhằm giúp cho các máy tính có thể chuyển thông tin cho nhau một cách chính xác, tránh thất lạc. Có thể coi địa chỉ IP trong mạng máy tính giống như địa chỉ nhà của bạn để nhân viên bưu điện có thể đưa thư đúng cho bạn chứ không phải một người nào khác.
