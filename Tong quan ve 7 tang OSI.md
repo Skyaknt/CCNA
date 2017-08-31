@@ -1,11 +1,18 @@
 # Tổng quan về 7 tầng OSI
-## A.	Tổng quan : 7 tầng OSI chia thành 2 phần:
--Phần 1: gồm 3 tầng trên cùng sẽ đảm bảo công việc thiết lập giao tiếp giữa người dùng với máy tính, máy tính với máy tính.
--Phần 2: gồm 4 tầng dưới cùng đảm nhận việc truyền tải dữ liệu , đảm bảo độ chính xác, an toàn cũng như gán các địa chỉ máy nguồn máy đích để gói tin đi đúng nơi.
+![Imgur](http://i.imgur.com/NRoz0u5.jpg)
+## 7 tầng OSI chia thành 2 phần:
+**-Phần 1: gồm 3 tầng trên cùng sẽ đảm bảo công việc thiết lập giao tiếp giữa người dùng với máy tính, máy tính với máy tính.**
+![Imgur](http://i.imgur.com/OQyt1QT.png)
+<br>
+**-Phần 2: gồm 4 tầng dưới cùng đảm nhận việc truyền tải dữ liệu , đảm bảo độ chính xác, an toàn cũng như gán các địa chỉ máy nguồn máy đích để gói tin đi đúng nơi.**
+![Imgur](http://i.imgur.com/DNSLuYq.png)
 
 ![](http://i.imgur.com/VbZQJEv.png)
 
 ### 1.	Tầng Ứng Dụng – Application Layer:
+
+![Imgur](http://i.imgur.com/ZWsh1jb.jpg)
+
 -	Là tầng người dùng giao tiếp với máy tính.
 -	Chịu trách nhiệm xác định, thiết lập các kết nối cho người dùng tới những dịch vụ mà họ mong muốn tồn tại.
 -	Việc truyền tải thông tin giữa các tổ chức hiện nay được mở rộng, yêu cầu các ứng dụng kết nối mạng như :
@@ -17,6 +24,9 @@
   *	Financial transaction services
 
 ### 2.	Tầng Phiên Dịch – Presentation Layer: 
+
+![Imgur](http://i.imgur.com/jtwNY81.jpg) 
+
 -	Trình bày dữ liệu : mã hóa, giải mã chuyển đổi mã hóa dữ liệu => chuyển dữ liệu người dùng nhập vào thành các chuẩn để các máy tính khác hiểu được trước khi đưa vào đường truyền. Đảm bảo dữ liệu gửi đi thì tầng ứng dụng của các máy khác sẽ đọc được.
 -	Một số chuẩn mã hóa của tầng phiên dịch :
   *	PICT : định dạng cho ảnh
@@ -27,6 +37,9 @@
   *	QuickTime: quản lí các ứng dụng chạy nhạc, video.
 
 ### 3.	Tầng Phiên – Session Layer:
+
+![Imgur](http://i.imgur.com/bq75Irf.jpg)
+
 -	Chịu trách nhiệm thiết lập, quản lí và hủy các phiên làm việc với các máy khách. 
 -	Cung cấp trình kiểm soát hộp thoại giữa các thiết bị số hoặc các chốt. Tầng này tạo các kết nối giữa các hệ thống khác nhau và thiết lập việc giao tiếp bằng 3 modes : simplex, hafl-duplex, full-duplex.
   *	Hafl- duplex ( bán lưỡng truyền) : dữ liệu truyền đi và về trên cùng 1 dây, có thể xảy ra xung đột
@@ -38,6 +51,8 @@
   *	Remote Procedure Call ( RPC ) 
   *	AppleTalk Session Protocol (ASP) : thiết lập và duy trì phiên làm việc giữa các máy khách của Appletalk và máy chủ.
  ### 4.	Tầng Giao vận – Transport Layer :
+ 
+ ![Imgur](http://i.imgur.com/6kgB8Mv.jpg)
 
 -	Các Segment và các dữ liệu cần lắp ráp lại từ các tầng ứng dụng ở trên gửi xuống sẽ được đựa vào 1 đường truyền chung. 
 -	Cung cấp dịch vụ giao vận đầu – cuối và thiết lập các kết nối vật lí giữa máy gửi và máy nhận trong một khu vực mạng.
@@ -78,6 +93,8 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
 ![Imgur](http://i.imgur.com/CPIC5EW.png)
 
  ### 5.	Tầng Mạng – Network Layer : Thiết bị hoạt động ở lớp 3 - Router
+ ![Imgur](http://i.imgur.com/IqU2F5X.gif)
+ 
 -	Lớp Mạng có trách nhiệm định tuyến thông qua mạng và địa chỉ mạng. Điều này có nghĩa là lớp Mạng có trách nhiệm truyền tải lưu lượng giữa các thiết bị không nằm trong vùng mạng nội bộ. 
 -	Routers hoặc các thiết bị khác ở lớp 3 hoạt động và cung cấp dịch vụ định tuyến ở tầng này.
 -	Cơ chế : khi một packet được router nhận , nó sẽ kiểm tra địa chỉ IP đích của gói tin. Nếu gói tin có địa chỉ đích không phải nó, router sẽ tra cứu trong bảng định tuyến của mình. Khi kiểm tra có địa chỉ IP đó, packet sẽ được chuyển xuống tầng Datalink của Router để gắn địa chỉ MAC thành frame, và gửi ra ngoài mạng nội bộ để truyền tới các router khác. Nếu nó kiểm tra trong bảng định tuyến không thấy IP đích, gói tin đó sẽ bị vứt bỏ.
@@ -108,6 +125,7 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
   
 
  ### 6.	Tầng liên kết dữ liệu – Data Link Layer : Thiết bị hoạt động ở lớp 2 - Switch
+![Imgur](http://i.imgur.com/49Urdvb.png)
 
 **Chức năng :** 
    -	Đảm bảo gói tin sẽ được gửi tới đúng thiết bị và phiên dịch các gói tin đó thành các bit 1 0 0 1 để truyền xuống tầng vật lý.
@@ -122,7 +140,28 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
 **Switch và Bridges ở tầng Liên kết dữ liệu :**
   - Switch và Bridge đều làm việc ở tầng Data Link, thuộc layer 2 và sử dụng địa chỉ vật lý MAC. 
   - Switch Layer 2 được coi là cầu nối dựa trên phần cứng vì nó sử dụng một phần cứng chuyên dụng gọi là mạch tích hợp ứng dụng cụ thể (ASICs). ASIC có thể chạy ở tốc độ gigabit với độ trễ rất thấp.
-  - Bridges và switches đọc mỗi frame khi nó đi qua mạng. Thiết bị lớp 2 sau đó sẽ lưu địa chỉ MAC nguồn vào 1 bảng filter và ghi nhớ cổng đã nhận frame đó vào. 
+  - Bridges và switches đọc mỗi frame đi qua mạng,sau đó sẽ lưu địa chỉ MAC nguồn vào 1 bảng filter và ghi nhớ cổng đã nhận frame đó vào, điều này sẽ cho nó biết thiết bị đó ở switch nào.
+   - Sau khi bảng filter được tạo ở switch, switch sẽ chỉ chuyển tiếp các frames đến đến các segment  cha đang đặt ở máy đích mà địa chỉ MAC đích của nó đã quy định. Nếu frame đó thuộc vào một segment cha được gửi tới máy đích thì switch sẽ khóa và ngăn nó truyền tới các segment khác. Còn trường hợp đích là các frame khác, không phải frame cha của segment đó, thì frame đó sẽ vẫn chỉ được truyền tới cái segment cha của nó. Điều này được gọi là transparent bridging.
+   - Khi thiết bị lớp 2 nhận một frame và địa chỉ MAC của nó chưa được lưu trên bảng filter, nó sẽ chuyển frame đó tới tất cả các segments đang lưu thông trong đường truyền. Nếu tại một thiết bị nào đó nó trả lời lại việc chuyển tiếp frame đó của thiết bị gửi, thì nó sẽ lưu địa chỉ MAC của thiết bị mới này vào bảng filter. Tuy nhiên thì trong một số trường hợp địa chỉ đích của việc chuyển tiếp frame có thể là địa chỉ broadcast.
+    - Lợi ích lớn nhất của Switch thay vì hub là trong hệ thống mạng nội bộ, mỗi cổng của switch có riêng miền xung đột của nó ( collision domain) trong khi hub lại tạo nên một miền xung đột tổng. Vì thế mà switch sẽ có thể cho phép nhiều mạng cùng kế nối trong 1 thời điểm còn hub chỉ có 1.
+    - Một lợi ích khác của chuyển mạch LAN ( LAN switching ) so với hub là mọi segment truyền qua switch sẽ được chuyển tiếp ngay lập tức vì mỗi segment đều có miền xung đột riêng.
+    - Switch không thể phiên dịch các loại truyền thông khác nhau. Có nghĩa là nếu một thiết bị kết nối vào switch phải sử dụng một loại Ethernet frame riêng. Nếu muốn kết nối vào mạng hình sao hoặc mạng Lan thì cần router để cung cấp dịch vụ phiên dịch.
+
+### 7.	Tầng Vật Lý – Physical Layer :
+![Imgur](http://i.imgur.com/ozzdFZy.gif)
+
+-	Chức năng : gửi và nhận bits 0,1
+-	Mỗi loại thông tin truyền thông sử dụng các định dạng bit khác nhau.
+-	Các đặc tính của Lớp Vật lý xác định yêu cầu về điện, cơ, thủ tục và chức năng để kích hoạt, duy trì và tắt một liên kết vật lý giữa các hệ thống đầu cuối.
+-	Tại lớp Vật lý, giao diện giữa Thiết bị đầu cuối dữ liệu (Data Terminal Equipment - DTE) và Thiết bị Ngắt kết nối Dữ liệu ( DCE - Data Circuit-Terminating Equipment), được xác định. DCE thường nằm ở nhà cung cấp dịch vụ, trong khi DTE là Thiết bị đính kèm. Các dịch vụ có sẵn cho DTE thường được truy cập thông qua Một modem hoặc đơn vị dịch vụ kênh / đơn vị dịch vụ dữ liệu (CSU / DSU)
+-	Các kết nối vật lý và cơ chế vật lý khác nhau được định nghĩa bởi chuẩn OSI như là , cho phép các hệ thống giao tiếp có thể giao tiếp với nhau dễ dàng.
+
+
+**Hub ở tầng Vật Lý**
+
+
+Hub là một bộ lặp có nhiều cổng. Một bộ lặp nhận các tín hiệu số và khuếch đại hoặc tái tạo chúng , sau đó chuyển chúng đến các cổng đang kết nối với nó mà không cần kiểm tra. Điều đó có nghĩa rằng tất cả các thiết bị kết nối với hub sẽ nằm chung trong một miền xung đột cũng như chung một miền quảng bá. 
+Hub tạo ra một mạng vật lý mà nó là trung tâm và các cáp kết nối từ nó đến tất cả các hướng tạo thành hệ thống mạng hình sao. Tuy nhiên thì mạng Ethernet sử dụng một cơ chế bus hợp lí hơn, có nghĩa là tín hiệu sẽ phải đi từ điểm đàu tới điểm cuối của mạng, mỗi thiết bị kết nối vào hub phải lắng nghe khi có một thiết bị phát tín hiệu.
 
 
 
