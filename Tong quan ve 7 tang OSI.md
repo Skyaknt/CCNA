@@ -16,12 +16,10 @@
 -	Là tầng người dùng giao tiếp với máy tính.
 -	Chịu trách nhiệm xác định, thiết lập các kết nối cho người dùng tới những dịch vụ mà họ mong muốn tồn tại.
 -	Việc truyền tải thông tin giữa các tổ chức hiện nay được mở rộng, yêu cầu các ứng dụng kết nối mạng như :
-  *	World wide web : Kết nối tới vô số các server . Các dữ liệu cơ bản như đồ họa, chữ, video, âm thanh.
-  *	Email – Gateways: linh hoạt trong việc sử dụng SMTP hoặc tiêu chuẩn X.400 để chuyển thư giữa các ứng dụng thư điện tử khác nhau.
-  * Electronic Data Enterchange ( EDI) 
-  *	Special interest bulletin boards
-  *	Internet navigation utilities
-  *	Financial transaction services
+      - World wide web : Kết nối tới vô số các server . Các dữ liệu cơ bản như đồ họa, chữ, video, âm thanh.
+      - Email – Gateways: linh hoạt trong việc sử dụng SMTP hoặc tiêu chuẩn X.400 để chuyển thư giữa các ứng dụng thư điện tử khác nhau.
+      - Electronic Data Enterchange ( EDI)
+	  
 
 ### 2.	Tầng Phiên Dịch – Presentation Layer: 
 
