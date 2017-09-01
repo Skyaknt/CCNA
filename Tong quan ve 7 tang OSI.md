@@ -145,11 +145,11 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
   *	Hafl- duplex ( bán lưỡng truyền) : dữ liệu truyền đi và về trên cùng đường truyền, khi đầu này gửi gói tin đi và đầu bên kia cũng gửi gói tin, khi đến nơi giao nhau, 1 gói tin phải nhường cho gói tin kia đi trước rồi nó mới có thể tiếp tục được truyền tải tiếp, có thể xảy ra xung đột
   *	Full- duplex ( lưỡng truyền)  : dữ liệu truyền đi và về trên cùng một đường truyền tuy nhiên theo 2 chiều khác nhau và hoàn toàn không liên quan gì đến nhau, do vậy không xảy ra xung đốt => tốc độ truyền nhanh hơn.
   *	Simplex ( đơn truyền ) : dữ liệu chỉ được truyền đi hoặc về .
--	Một số ví dụ về giao thức ở tầng Phiên và giao diện : 
-  *	Network File System ( NFS) : cho phéo truy cập ẩn danh vào các tài nguyên ở xa.
-  *	Structured Query Language ( SQL ) : cung cấp cho người dùng cách thức đơn giản để xác định thông tin cần thiết ở cả hệ thống nội bộ và bên ngoài.
-  *	Remote Procedure Call ( RPC ) 
-  *	AppleTalk Session Protocol (ASP) : thiết lập và duy trì phiên làm việc giữa các máy khách của Appletalk và máy chủ.
+- Một số ví dụ về giao thức ở tầng Phiên và giao diện : 
+  	*	Network File System ( NFS) : cho phéo truy cập ẩn danh vào các tài nguyên ở xa.
+ 	*	Structured Query Language ( SQL ) : cung cấp cho người dùng cách thức đơn giản để xác định thông tin cần thiết ở cả hệ thống nội bộ và bên ngoài.
+ 	*	Remote Procedure Call ( RPC ) 
+ 	*	AppleTalk Session Protocol (ASP) : thiết lập và duy trì phiên làm việc giữa các máy khách của Appletalk và máy chủ.
   #### 2.4.	Tầng Giao vận – Transport Layer :
  
  ![Imgur](http://i.imgur.com/6kgB8Mv.jpg)
