@@ -182,7 +182,7 @@ Trong truyền thông tin cậy ,khi 2 máy muốn kết nối với nhau , mỗ
    - Điều này sẽ được giải quyết bằng một chức năng của tầng transport. Mỗi khi dữ liệu đến máy nhận, máy nhận sẽ gửi một tín hiệu báo cho máy gửi tiếp tục gửi dữ liệu sang.Cứ như vậy cho đến khi truyền xong.
    ![Imgur](http://i.imgur.com/ZVzXn8P.png)
    
-##### c. Windowing : 
+##### c. Windowing - cửa sổ trượt : 
 Dữ liệu truyền qua đường truyền bằng giao thức truyền thông tin cậy sẽ phải chờ máy khách đã nhận dữ liệu, rồi mới gửi tiếp các segment khác. Tuy nhiên quá trình đó sẽ mất nhiều thời gian và tốc độ không cao, vì vậy hình thành nên giao thức gửi dữ liệu bằng *windowing*. 
   - 	Với mỗi lần gửi, nó cho phép nhiều hơn một segment được gửi đi trước khi thông báo nhận được dữ liệu từ máy khách được gửi lại. Vì vậy dữ liệu sẽ được gửi nhiều hơn trong thời gian nhanh hơn.
   ![Imgur](http://i.imgur.com/slJToQm.png)
@@ -232,7 +232,7 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
    - 	Các packets từ tầng Network sẽ được đóng gói vào các đơn vị lớn hơn gọi là Frame. Địa chỉ MAC nguồn và MAC đích sẽ được gắn vào frame.
    - 	Để thực hiện được nhiệm vụ đó thì tầng Data link dùng 2 giao thức là LLC (logical link control) và MAC (Media Access Control ) được nằm trong bộ tiêu chuẩn Ethernet:
           - LLC : 802.2 dùng để liên kết dữ liệu với bên trên đồng thời bắt đầu xây dựng frame và chỉ định giao thức hoạt động ở tầng mạng (IP, IPX, Apple talk).
-                - Header của LLC cho biết Tầng liên kết dữ liệu phải làm gì khi nhận được gói tin. Ví dụ máy chủ nhận được một frame, nó sẽ dò tìm trong header của LLC để biết rằng gói tin này được thiết kế cho giao thức IP ở tầng Network. LLC có thể cung cấp điều khiển luoongf và sắp xếp các bit điều khiển
+                - Header của LLC cho biết Tầng liên kết dữ liệu phải làm gì khi nhận được gói tin. Ví dụ máy chủ nhận được một frame, nó sẽ dò tìm trong header của LLC để biết rằng gói tin này được thiết kế cho giao thức IP ở tầng Network. LLC có thể cung cấp điều khiển luồng và sắp xếp các bit điều khiển
      - MAC : 802.3 dùng để hoàn thiện xây dựng Frame bằng việc thêm vào các địa chỉ, mã bắt đầu và mã kết thúc của một Frame (MAC này khác địa chỉ MAC).
                 -	Quy định đường dây, thông báo lỗi (không sửa chữa), yêu cầu phân phối frame và điều khiển luồng tùy chọn cũng có thể được sử dụng tại lớp con này.
             
