@@ -7,7 +7,7 @@ Có 2 hình thức cơ bản để truy nhập vào các liên kết vật lý :
 ## 1.	CSMA/CD (Carrier Sense Multiple Access with Collision Detect (CSMA/CD) : phương pháp đa truy cập sử dụng sóng mang có phát hiện xung đột.
 -	Hoạt động : khi một máy chủ muốn gửi thông điệp qua mạng, đầu tieen CSMA sẽ kiểm tra xem trong hệ thống mạng có tín hiệu số nào không. Nếu không có tín hiệu nào ( không có máy nào đang truyền dữ liệu) máy chủ đó sẽ bắt đầu tiến hành việc truyền. Trong quá trình truyền, phương pháp CSMA/CD còn kiểm soát đường truyền theo thời gian thực. Nếu phát hiện ra các tín hiệu khác trên đường truyền, nó sẽ gửi một tín hiệu jam đến các node trên segment để dừng việc gửi dữ liệu đó lại. Các node sẽ phản hồi lại tín hiệu jam bằng cách đợi trong 1 khoảng thời gian trước khi cố gắng gửi dữ liệu tiếp. Thuật toán Backoff giúp xác định thời điểm để gửi lại dữ liệu từ các trạm, sau 15 lần bị hoãn gửi thì việc truyền thông tin từ node đó sẽ bị hết hiệu lực và phải thiết lập một kết nối mới.
 ### a.	Half-duplex và Full-duplex Ethernet (chế độ bán song công và song công toàn phần) 
--**Hafl-duplex Ethernet**: được định nghĩa trong chuẩn 802.3 Ethernet và sử dụng chỉ một cặp dây với một tín hiệu số chạy cả 2 chiều trên dây. Công nghệ này cũng sử dụng phương pháp CSMA/CD để chống xung đột và tiến hành gửi lại dữ liệu nếu xung đột xảy ra. 
+-**Hafl-duplex Ethernet**: được định nghĩa trong chuẩn 802.3 Ethernet và sử dụng chỉ một kết nối với một tín hiệu số chạy cả 2 chiều trên kết nối đó . Ví dụ : Khi một gói tin từ đầu bên này gửi đi và bên đầu kia cũng gửi đi 1 gói tin, 2 gói tin sẽ cùng được truyền đi trên kết nối đó, khi chúng gặp nhau, 1 gói tin phải nhường đường cho gói tin kia đi rồi nó mới tiếp tục , điều này hay gây nên xung đột. Công nghệ này cũng sử dụng phương pháp CSMA/CD để chống xung đột và tiến hành gửi lại dữ liệu nếu xung đột xảy ra. 
     o	Nếu HUB được kết nối vào Switch, nó phải hoạt động ở chế độ Hafl-duplex  để xác định xung đột.
     o	Hafl-duplex Ethernet , đặc biệt trong mạng 10BaseT chỉ đạt mức hiệu quả 50-60% 
     o	Trong một mạng lớn 10BaseT, phương pháp half-duplex chỉ đảm bảo băng thông giao động ở mức 3-4Mbps.
@@ -15,9 +15,9 @@ Có 2 hình thức cơ bản để truy nhập vào các liên kết vật lý :
 ***10BASE-T** là một công nghệ trong mạng [Ethernet] cho phép các [máy tính] trong mạng được nối với nhau thông qua cáp đôi xoắn. Tên gọi của 10BASE-T xuất phát từ một vài đặc điểm vật lý, trong đó 10 tương ứng với tốc độ truyền tối đa 10 [Megabit] trên giây (Mb/s), BASE là viết gọn của [baseband], T là loại cáp xoắn đôi (Twisted Pairs). Vì sử dụng cáp xoắn đôi nên nó có thẻ chạy song công toàn phần (Full duplex).*
 </br>
 
--	**Full-duplex Ethernet**: sử dụng 2 cặp dây,tín hiệu được truyền theo cả 2 chiều trên dây thay vì chỉ 1 chiều .
+-	**Full-duplex Ethernet**: sử dụng 1 kết nối tuy nhiên tín hiệu được truyền theo cả 2 chiều kết nối đó thay vì chỉ 1 chiều .
 
-     -	Sử dụng kết nối point – to – point  giữa bộ phận gửi ở thiết bị gửi với bộ phận nhận của thiết bị nhận. 
+     -	Sử dụng kết nối point – to – point  giữa bộ phận gửi ở thiết bị gửi với bộ phận nhận của thiết bị nhận (ví dụ :  1 cổng bên này sẽ gửi dữ liệu sang 1 cổng ở đầu kia, còn đầu kia sẽ gửi dữ liệu từ 1 cổng khác của mình sang bên này , máy bên này cũng sẽ nhận bằng 1 cổng khác). 
     
      -	Không có xung đột xảy ra trên đường truyền vì 2 chiều của tín hiệu được truyền trên 2 cặp dây khác nhau.
     
