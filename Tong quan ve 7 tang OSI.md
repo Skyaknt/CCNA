@@ -1,5 +1,106 @@
+
 # Tổng quan về 7 tầng OSI
 ![Imgur](http://i.imgur.com/NRoz0u5.jpg)
+
+## Mục lục :
+### A. Nền tảng của truyền thông
+	1.Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông
+	2. Tìm hiểu về giao thức ( protocol ) trong truyền thông
+	3. Các bước truyền thông qua mạng trong mô hình OSI
+### B. Tổng quan về mô hình OSI
+	1. Định nghĩa
+		a. Mô hình OSI là gì?
+		b. Tại sao phải phân lớp?
+	2. Cái nhìn khái quát về 7 tầng OSi : đặc điểm, chức năng mỗi tầng
+		2.1. Tầng Ứng dụng ( Application Layer )
+		2.2. Tầng Phiên dịch ( Presentation Layer )
+		2.3. Tầng Phiên ( Session Layer )
+		2.4. Tầng Giao vận ( Traansport Layer )
+		2.5. Tầng Mạng ( Network Layer)
+		2.6. Tầng Liên kết dữ liệu ( Datalink Layer )
+		2.7. Tầng Vật lý ( Physical Layer )
+	
+
+## A. Nền tảng của truyền thông: 
+Để các máy tính và các thiết bị trong mạng truyền thông được với nhau thì hệ thống mạng phải có phần cứng và phần mềm. Từ phần cứng và phần mềm ta chia thành 4 thành phần: 
+- Thiết bị đầu cuối: máy tính, laptop, Server, điện thoại. Các thiết bị này đều phải cài đặt Hệ điều hành hoặc phần mềm.
+- Đường truyền: dây, Switch, Router, Modem được kết nối lại với nhau. Để kết nối gần ta dùng dây cáp đồng, kết nối xa thì dùng dây cáp quang hoặc dùng sóng vệ tinh.
+- Thông tin: nội dung website, thư điện tử, nội dung chat... Dữ liệu này này sẽ được chia thành các mảnh để đưa vào đường truyền gọi là Segment. Để trao đổi được thông tin thì phải có người gửi và người nhận. 
+- Giao thức (rule): cho phép truy cập tới dịch vụ gì, được đi theo đường nào, dữ liệu được tải ra sao,giao thức nào được áp dụng là gì. Vd: truyền theo Web phải sử dụng theo port 80 hoặc 443.
+
+### 1. Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông: 
+
++ Trong mạng LAN: Các PC, Switch, Router giao tiếp với nhau bằng địa chỉ MAC.
+
++ Dữ liệu từ mạng LAN đi ra ngoài internet phải thông qua Modem hoặc Router.
+
++ Từ Router ở công ty sẽ gửi tới router của nhà cung cấp dịch vụ. 
+
++ Các nhà cung cấp dịch vụ sẽ liên kết Router lại với nhau để chuyển đi quốc tế.
+
++ Trên Các Router có bảng định tuyến để định đúng đường đi. 
+
+### 2. Tìm hiểu về giao thức (Protocol) trong truyền thông: 
+
++ Giao thức dùng để định dạng cấu trúc của gói tin. Gói tin đi theo Web thì phải theo định dạng của Web,
+
+Mail định dạng theo Mail... Do đó trên tầng ứng dụng có thể dùng cùng lúc nhiều dịch vụ mà không sợ xung đột nhau.
+
++ Cho phép truy cập tới đâu: thông qua giao thức chúng ta có thể điều hướng người dùng truy cập tới Server 
+
+trong công ty hay truy cập ra Server bên ngoài internet. Truy cập tới dịch vụ này hay tới dịch vụ khác.
+
++ Được tải những phần dữ liệu nào: trong hệ thống có nhiều phòng ban, dựa vào giao thức ta có thể 
+
+phân quyền truy cập tài nguyên. Người dùng có thể copy dữ liệu trên phòng ban của mình hoặc cả phòng ban khác.
+
++ Cho phép truyền hoặc tải bao nhiêu dữ liệu qua đường truyền: đường truyền là 100Mbps/s chúng ta có thể giới 
+
+hạn tải xuống 20Mbps hoặc 50Mbps.
+### 3. Các bước truyền thông qua mạng trong mô hình OSI: 
+
+- Xét trường hợp cụ thể là truy cập vào trang Google.
+
+=> Bước 1: mở trình duyệt IE hoặc Firefox trên máy tính gõ : http://google.com. Do IE là phần mềm sử dụng giao thức http, https (port 80, 443). Bộ giao thức này nằm ở tầng Application. Ai muốn viết phần mềm hoặc lập trình web thì phải tuân thủ.
+
+=> Bước 2:  yêu cầu được nhập vào là ký tự trên bàn phím, máy tính sẽ chuyển đổi ra tín hiệu nhị phân (bit 0, 1) để cho máy tính hiểu. 
+Để chuyển đổi được thì máy tính có hẳn riêng một bộ phận làm phiên dịch là tầng Presentation.
+
+=> Bước 3: Trước yêu cầu được truyền đi máy tính sẽ có một bộ phận đàm phán phiên để truyền gọi là Session. Session ở đây nó sẽ tạo ra một kết nối trực tiếp tới Server google, được Server google đồng ý nó mới truyền yêu cầu. Sau khi kết thúc phiên nó sẽ đóng kết nối.
+
+=> Bước 4: Để yêu cầu đi được (yêu cầu là dữ liệu) thì phải có bộ phận đóng gói dữ liệu đó là tầng Transport. Transport sẽ nhận dữ liệu từ Port 80 của giao thức http đi từ tầng Application xuống rồi đóng thêm giao thức để truyền thông là TCP hay UDP để truyền. Giao thức TCP ở tầng Transport có nhiệm vụ băm nhỏ dữ liệu ra thành các Segment (data và header). Trong header có cổng nguồn và cổng đích. Các Segment sẽ chuyển xuống tầng Network để xử lý (dữ liệu từ tầng này trở lên là độc lập với đường truyền). 
+
+=> Bước 5: Tầng Network sẽ sử dụng IPv4 và IPv6 nhưng chủ yếu là IPv4. Khi các Segment đưa xuống sẽ đóng vào gói Data lớn hơn. Trong này sẽ có IP nguồn và IP đích (địa chỉ máy gửi là máy mình và địa chỉ máy nhận là địa chỉ Server Google). Sau đó sẽ đưa xống bên dưới là tầng Data Link.
+
+=> Bước 6: Data link đóng vào địa chỉ MAC ( MAC nguồn và MAC đích). MAC của máy PC1 và MAC cổng Gateway. Data link sẽ đóng vào đầu là Header và cuối là Trailer. Sau đó đưa xuống đường vật lí (physical).
+
+=> Bước 7: Đường vật lí là tín hiệu điện 0,1 được gửi đi (tín hiệu điện này khác với tín hiệu điện dữ liệu)
+
+=> Bước 8: Sau khi gửi ra Router thì nó sẽ nhận các tín hiệu và đóng gói rồi phân tích địa chỉ MAC. Router sẽ xem địa chỉ MAC đích là ai nếu đúng nó sẽ xác định để xử lý. Nếu đúng nó tách ra và đưa lên tầng Network để xác định địa chỉ IP của đích tới. Sau khi xác định xong sẽ đóng gói lại và chuyển ra cổng bên ngoài. Router sẽ sử dụng bảng định tuyến để gửi ra đúng cổng cần chuyển. Tương tự các thiết bị Router kế tiếp sẽ nhận và gửi đi sau đó gửi tới đích là Server Google.
+
+=> Bước 9: Sau khi xử lý Server sẽ gửi lại dữ liệu yêu cầu vào đường truyền. 
+
+=> Bước 10: Sau khi dữ liệu tới đích nó sẽ gửi lên cửa sổ IE và kết thúc quá trình truyền thông.
+
+
+## B. Tổng quan Mô hình 7 tầng OSI :
+
+### 1. Định nghĩa :
+
+#### a. Mô hình OSI là gì?
+
+Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối các hệ thống mở, là một mô hình phân lớp nổi tiếng. Được phác thảo vào năm 1971 và hoàn thiện vào năm 1984. Mô hình này chia thành 7 lớp: Application, Presentation, Session, Transport, Network, Data link, Physical.
+#### b. Tại sao lại phân lớp? 
+Để truyền thông được chúng ta phải xây dựng một hệ thống mạng. Trong hệ thống mạng bao gồm thiết bị vật lý, đường truyền, dữ liệu và các giao thức. Một công ty không thể sản xuất và thiết kế được hết bấy nhiêu chức năng, nên người ta phải phân ra các lớp công việc để phát triển phù hợp.
+
+- Các ưu điểm khi phân lớp:
+
+	=> Giảm tải độ phức tạp của hệ thống khi truyền dữ liệu. Khi phân lớp người ta không phải sản xuất từ trên xuống dưới mà chỉ cần làm một phần công việc. Sản phẩm sẽ tốt hơn, tương thích với nhiều thành phần của các dòng sản phẩm khác nhau. <br>
+	=> Trong mô hình OSI người ta phân ra thành các lớp chuẩn. Người sản xuất phải dựa vào chuẩn đó để xây dựng và phát triển. Do đó các lớp sẽ giao tiếp được với nhau. Từ đó tạo ra sự chuẩn hóa của các dòng sản phẩm <br>
+	=> Do có sự chuẩn hóa về sản phẩm nên nó sẽ tương thích về công nghệ. Ngày này máy IBM có thể truyền tới máy HP <br>
+	=> Thúc đẩy kỹ thuật module hóa: ai mạnh về lớp nào sẽ sản suất chuyên môn lớp đó. => Thúc đẩy phát triển của công nghệ <br>
+	=> Người dùng dễ học hơn: không phải học hết cả 7 lớp một lúc mà học lần lượt đều được.	<br>
+
 ## 7 tầng OSI chia thành 2 phần:
 **-Phần 1: gồm 3 tầng trên cùng sẽ đảm bảo công việc thiết lập giao tiếp giữa người dùng với máy tính, máy tính với máy tính.**
 ![Imgur](http://i.imgur.com/OQyt1QT.png)
@@ -8,8 +109,9 @@
 ![Imgur](http://i.imgur.com/DNSLuYq.png)
 
 ![](http://i.imgur.com/VbZQJEv.png)
+### 2. Cái nhìn tổng quan về 7 tầng OSI : đặc điểm, chức năng 
 
-### 1.	Tầng Ứng Dụng – Application Layer:
+#### 2.1.	Tầng Ứng Dụng – Application Layer:
 
 ![Imgur](http://i.imgur.com/ZWsh1jb.jpg)
 
@@ -21,7 +123,7 @@
       - Electronic Data Enterchange ( EDI)
 	  
 
-### 2.	Tầng Phiên Dịch – Presentation Layer: 
+#### 2.2.	Tầng Phiên Dịch – Presentation Layer: 
 
 ![Imgur](http://i.imgur.com/jtwNY81.jpg) 
 
@@ -34,7 +136,7 @@
   *	MPEG : điịnh dạng video cho đĩa CD với bit-rate lên tới 1.5Mbps
   *	QuickTime: quản lí các ứng dụng chạy nhạc, video.
 
-### 3.	Tầng Phiên – Session Layer:
+#### 2.3.	Tầng Phiên – Session Layer:
 
 ![Imgur](http://i.imgur.com/bq75Irf.jpg)
 
@@ -48,7 +150,7 @@
   *	Structured Query Language ( SQL ) : cung cấp cho người dùng cách thức đơn giản để xác định thông tin cần thiết ở cả hệ thống nội bộ và bên ngoài.
   *	Remote Procedure Call ( RPC ) 
   *	AppleTalk Session Protocol (ASP) : thiết lập và duy trì phiên làm việc giữa các máy khách của Appletalk và máy chủ.
- ### 4.	Tầng Giao vận – Transport Layer :
+  #### 2.4.	Tầng Giao vận – Transport Layer :
  
  ![Imgur](http://i.imgur.com/6kgB8Mv.jpg)
 
@@ -56,14 +158,14 @@
 -	Cung cấp dịch vụ giao vận đầu – cuối và thiết lập các kết nối vật lí giữa máy gửi và máy nhận trong một khu vực mạng.
 -	Sử dụng giao thức giao vận tin cậy ( TCP ) hoặc truyền thông không tin cậy ( UDP )
 -	Chịu trách nhiệm cung cấp cơ chế hoạt động cho các dịch vụ ở các tầng ứng dụng ở trên như tạo phiên, hủy các kết nối ảo. Nó cũng ẩn các thông tin chi tiết phụ thuộc của  các tầng trên bằng cách cung cấp cơ chế truyền tải trong suốt.
-#### a.	Kiểm soát lưu lượng: 
+##### a. Kiểm soát lưu lượng: 
 Ngăn chặn việc máy chủ gửi dữ liệu đến máy khách khỏi việc quá tải , điều có thể gây mất dữ liệu. Việc truyền tải dữ liệu tin cậy sẽ yêu cầu các kết nối định hướng giữa các hệ thống, và các giao thức mà đảm bảo được những điều sau đây sẽ đủ tiêu chuẩn để truyền tải tin cậy :
   * Các phân đoạn đã được truyền đi được xác nhận lại cho người gửi khi máy khách nhận được.
   * Bất kỳ đoạn nào không được thừa nhận sẽ được truyền lại
   * Các đoạn được sắp xếp theo thứ tự đúng khi đến đích.
   * Một luồng dữ liệu quản lý được duy trì để tránh tình trạng tắc nghẽn, quá tải, và mất dữ liệu
   
-#### b. Truyền thông hướng kết nối :
+##### b. Truyền thông hướng kết nối :
 Trong truyền thông tin cậy ,khi 2 máy muốn kết nối với nhau , mỗi máy sẽ thông báo tới hệ thống của mình là 1 kết nối sắp được thiết lập, 2 hệ điều hành sẽ kết nối bằng cách gửi tin nhắn xác nhận cho nhau thông qua mạng về việc chuẩn bị kết nối. Khi mà việc yêu cầu đồng bộ giữa 2 bên hoàn thành, một kết nối sẽ được thiết lập và dữ liệu bắt đầu truyền. Đây gọi là quá trình BẮT TAY 3 BƯỚC. 
 
   - 	Trong khi dữ liệu được truyền giữa các máy, 2 máy sẽ kiểm tra định kì việc truyền tải của máy kia bằng phần mềm kiểm tra giao thức để chắc chắn mọi việc đều diễn ra ổn định và dữ liệu không bị thay đổi.
@@ -80,7 +182,7 @@ Trong truyền thông tin cậy ,khi 2 máy muốn kết nối với nhau , mỗ
    - Điều này sẽ được giải quyết bằng một chức năng của tầng transport. Mỗi khi dữ liệu đến máy nhận, máy nhận sẽ gửi một tín hiệu báo cho máy gửi tiếp tục gửi dữ liệu sang.Cứ như vậy cho đến khi truyền xong.
    ![Imgur](http://i.imgur.com/ZVzXn8P.png)
    
-#### c. Windowing : 
+##### c. Windowing : 
 Dữ liệu truyền qua đường truyền bằng giao thức truyền thông tin cậy sẽ phải chờ máy khách đã nhận dữ liệu, rồi mới gửi tiếp các segment khác. Tuy nhiên quá trình đó sẽ mất nhiều thời gian và tốc độ không cao, vì vậy hình thành nên giao thức gửi dữ liệu bằng *windowing*. 
   - 	Với mỗi lần gửi, nó cho phép nhiều hơn một segment được gửi đi trước khi thông báo nhận được dữ liệu từ máy khách được gửi lại. Vì vậy dữ liệu sẽ được gửi nhiều hơn trong thời gian nhanh hơn.
   ![Imgur](http://i.imgur.com/slJToQm.png)
@@ -90,7 +192,7 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
   - Khi bất cứ segment nào được gửi đi, phương pháp đó sẽ gửi một xác nhận tới máy gửi rằng nó đã nhận được hay chưa, được rồi thì máy nhận sẽ gửi segment tiếp theo, nếu chưa thì gửi lại segment vừa rồi.
 ![Imgur](http://i.imgur.com/CPIC5EW.png)
 
- ### 5.	Tầng Mạng – Network Layer : Thiết bị hoạt động ở lớp 3 - Router
+ #### 2.5.Tầng Mạng – Network Layer : Thiết bị hoạt động ở lớp 3 - Router
  ![Imgur](http://i.imgur.com/IqU2F5X.gif)
  
 -	Lớp Mạng có trách nhiệm định tuyến thông qua mạng và địa chỉ mạng. Điều này có nghĩa là lớp Mạng có trách nhiệm truyền tải lưu lượng giữa các thiết bị không nằm trong vùng mạng nội bộ. 
@@ -122,7 +224,7 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
    -  Router có thể cung cấp Chất lượng Dịch vụ (QoS) cho các loại lưu lượng mạng cụ thể.*
   
 
- ### 6.	Tầng liên kết dữ liệu – Data Link Layer : Thiết bị hoạt động ở lớp 2 - Switch
+ #### 2.6.	Tầng liên kết dữ liệu – Data Link Layer : Thiết bị hoạt động ở lớp 2 - Switch
 ![Imgur](http://i.imgur.com/49Urdvb.png)
 
 **Chức năng :** 
@@ -145,7 +247,7 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
     - Một lợi ích khác của chuyển mạch LAN ( LAN switching ) so với hub là mọi segment truyền qua switch sẽ được chuyển tiếp ngay lập tức vì mỗi segment đều có miền xung đột riêng.
     - Switch không thể phiên dịch các loại truyền thông khác nhau. Có nghĩa là nếu một thiết bị kết nối vào switch phải sử dụng một loại Ethernet frame riêng. Nếu muốn kết nối vào mạng hình sao hoặc mạng Lan thì cần router để cung cấp dịch vụ phiên dịch.
 
-### 7.	Tầng Vật Lý – Physical Layer :
+#### 2.7.	Tầng Vật Lý – Physical Layer :
 ![Imgur](http://i.imgur.com/ozzdFZy.gif)
 
 -	Chức năng : gửi và nhận bits 0,1
