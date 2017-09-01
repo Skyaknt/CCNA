@@ -64,7 +64,9 @@ Có 4 loại gói dữ liệu Ethernet ( Frame) :
 #### 802.2 and SNAP :
 Chuẩn 802.3 Ethernet frame không thể tự nó định danh được giao thức sử dụng ở tầng trên ( tầng Network), mà cần sự giúp đỡ từ chuẩn 802.2 LLC để cung cấp chức năng này. 
 
-
+# Tham khảo thêm : 
+68
+( 2 phương pháp dưới hiện tại không còn phổ biến trong truyền thông qua mạng )
 
 ## 2. Phương pháp Token BUS (phương pháp bus với thẻ bài)
   - Phương pháp truy nhập có điểu khiển dùng kỹ thuật “chuyển thẻ bài” để cấp phát quyền truy nhập đường truyền. Thẻ bài (Token) là một đơn vị dữ liệu đặc biệt, có kích thước và có chứa các thông tin điều khiển trong các khuôn dạng 
