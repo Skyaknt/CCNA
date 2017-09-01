@@ -142,8 +142,8 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
 
 -	Chịu trách nhiệm thiết lập, quản lí và hủy các phiên làm việc với các máy khách. 
 -	Cung cấp trình kiểm soát hộp thoại giữa các thiết bị số hoặc các chốt. Tầng này tạo các kết nối giữa các hệ thống khác nhau và thiết lập việc giao tiếp bằng 3 modes : simplex, hafl-duplex, full-duplex.
-  *	Hafl- duplex ( bán lưỡng truyền) : dữ liệu truyền đi và về trên cùng 1 dây, có thể xảy ra xung đột
-  *	Full- duplex ( lưỡng truyền)  : dữ liệu truyền đi và về trên 2 dây khác nhau, do vậy không xảy ra xung đốt => tốc độ truyền nhanh hơn.
+  *	Hafl- duplex ( bán lưỡng truyền) : dữ liệu truyền đi và về trên cùng đường truyền, khi đầu này gửi gói tin đi và đầu bên kia cũng gửi gói tin, khi đến nơi giao nhau, 1 gói tin phải nhường cho gói tin kia đi trước rồi nó mới có thể tiếp tục được truyền tải tiếp, có thể xảy ra xung đột
+  *	Full- duplex ( lưỡng truyền)  : dữ liệu truyền đi và về trên cùng một đường truyền tuy nhiên theo 2 chiều khác nhau và hoàn toàn không liên quan gì đến nhau, do vậy không xảy ra xung đốt => tốc độ truyền nhanh hơn.
   *	Simplex ( đơn truyền ) : dữ liệu chỉ được truyền đi hoặc về .
 -	Một số ví dụ về giao thức ở tầng Phiên và giao diện : 
   *	Network File System ( NFS) : cho phéo truy cập ẩn danh vào các tài nguyên ở xa.
