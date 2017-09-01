@@ -21,7 +21,7 @@ VTP được thiết lập để giải quyết các vấn đề nằm bên tron
 Ví dụ: Một hệ thống có các kết nối Switch hỗ trợ bởi các VLAN. Để thiết lập và duy trì kết nối bên trong VLAN ,
 mỗi VLAN phải được cấu hình thông suốt trên tất cả các Switch. Khi phát triển mạng và các Switch được thêm vào
 mạng, mỗi Switch mới phải được cấu hình với các thông tin của VLAN trước đó.
-Việc cấu hình VLAN có thể sẽ sảy ra 2 vấn đề sau: </br>
+Việc cấu hình VLAN có thể sẽ sảy ra 2 vấn đề sau:
 – Các kết nối chồng chéo lên nhau do cấu hình VLAN không đúng.
 – Các cấu hình không đúng giữa các môi trường truyền khác nhau.
 ```
