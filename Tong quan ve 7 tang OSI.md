@@ -128,13 +128,13 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
 ![Imgur](http://i.imgur.com/jtwNY81.jpg) 
 
 -	Trình bày dữ liệu : mã hóa, giải mã chuyển đổi mã hóa dữ liệu => chuyển dữ liệu người dùng nhập vào thành các chuẩn để các máy tính khác hiểu được trước khi đưa vào đường truyền. Đảm bảo dữ liệu gửi đi thì tầng ứng dụng của các máy khác sẽ đọc được.
--	Một số chuẩn mã hóa của tầng phiên dịch :
-  *	PICT : định dạng cho ảnh
-  *	TIFF : định dạng cho tập tin đồ họa các độ phân giải cao
-  *	JPEG : định dạng chuẩn cho tập tin ảnh
-  *	MIDI : định dạng nhạc số
-  *	MPEG : điịnh dạng video cho đĩa CD với bit-rate lên tới 1.5Mbps
-  *	QuickTime: quản lí các ứng dụng chạy nhạc, video.
+- Một số chuẩn mã hóa của tầng phiên dịch :
+  	*	PICT : định dạng cho ảnh
+  	*	TIFF : định dạng cho tập tin đồ họa các độ phân giải cao
+ 	*	JPEG : định dạng chuẩn cho tập tin ảnh
+ 	*	MIDI : định dạng nhạc số
+  	*	MPEG : điịnh dạng video cho đĩa CD với bit-rate lên tới 1.5Mbps
+  	*	QuickTime: quản lí các ứng dụng chạy nhạc, video.
 
 #### 2.3.	Tầng Phiên – Session Layer:
 
