@@ -15,13 +15,13 @@ Có 2 hình thức cơ bản để truy nhập vào các liên kết vật lý :
 ***10BASE-T** là một công nghệ trong mạng [Ethernet] cho phép các [máy tính] trong mạng được nối với nhau thông qua cáp đôi xoắn. Tên gọi của 10BASE-T xuất phát từ một vài đặc điểm vật lý, trong đó 10 tương ứng với tốc độ truyền tối đa 10 [Megabit] trên giây (Mb/s), BASE là viết gọn của [baseband], T là loại cáp xoắn đôi (Twisted Pairs). Vì sử dụng cáp xoắn đôi nên nó có thẻ chạy song công toàn phần (Full duplex).*
 </br>
 
-- **Full-duplex Ethernet**: sử dụng 1 kết nối tuy nhiên tín hiệu được truyền theo cả 2 chiều kết nối đó thay vì chỉ 1 chiều .
+-**Full-duplex Ethernet**: sử dụng 1 kết nối tuy nhiên tín hiệu được truyền theo cả 2 chiều kết nối đó thay vì chỉ 1 chiều .
 
-     -	Sử dụng kết nối point – to – point  giữa bộ phận gửi ở thiết bị gửi với bộ phận nhận của thiết bị nhận (ví dụ :  1 cổng bên này sẽ gửi dữ liệu sang 1 cổng ở đầu kia, còn đầu kia sẽ gửi dữ liệu từ 1 cổng khác của mình sang bên này , máy bên này cũng sẽ nhận bằng 1 cổng khác). 
+   -	Sử dụng kết nối point – to – point  giữa bộ phận gửi ở thiết bị gửi với bộ phận nhận của thiết bị nhận (ví dụ :  1 cổng bên này sẽ gửi dữ liệu sang 1 cổng ở đầu kia, còn đầu kia sẽ gửi dữ liệu từ 1 cổng khác của mình sang bên này , máy bên này cũng sẽ nhận bằng 1 cổng khác). 
     
-     -	Không có xung đột xảy ra trên đường truyền vì 2 chiều của tín hiệu được truyền trên 2 cặp dây khác nhau.
+   -	Không có xung đột xảy ra trên đường truyền vì 2 chiều của tín hiệu được truyền trên 2 cặp dây khác nhau.
     
-     -	Full-duplex Ethernet đạt mức hiệu quả truyền tải là 100% ở cả 2 chiều đường truyền. Ví dụ bạn có thể có băng thông 20Mbps với đường truyền Ethernet 10Mbps sử dụng phương pháp Full-duplex.
+   -	Full-duplex Ethernet đạt mức hiệu quả truyền tải là 100% ở cả 2 chiều đường truyền. Ví dụ bạn có thể có băng thông 20Mbps với đường truyền Ethernet 10Mbps sử dụng phương pháp Full-duplex.
 
 -	Khi một cổng Full-duplex Ethernet đươc bật, nó sẽ kết nối tới điểm đầu và cuối của liên kết FastEthernet. Cơ chế này gọi là chế độ tự động phát hiện. Đầu tiên nó sẽ kiểm tra khả năng tải của đường dây trên cả 2 đầu để xem nó có đáp ứng được 10-100Mbps không để tiến hành truyền thông tin theo phương pháp Full-duplex. Nếu không nó sẽ sử dụng phương pháp Hafl-duplex. 
 
