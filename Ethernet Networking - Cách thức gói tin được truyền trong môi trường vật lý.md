@@ -9,10 +9,9 @@ Có 2 hình thức cơ bản để truy nhập vào các liên kết vật lý :
 ### a.	Half-duplex và Full-duplex Ethernet (chế độ bán song công và song công toàn phần) 
 -**Hafl-duplex Ethernet**: được định nghĩa trong chuẩn 802.3 Ethernet và sử dụng chỉ một kết nối với một tín hiệu số chạy cả 2 chiều trên kết nối đó . 
 *Ví dụ : Khi một gói tin từ đầu bên này gửi đi và bên đầu kia cũng gửi đi 1 gói tin, 2 gói tin sẽ cùng được truyền đi trên kết nối đó, khi chúng gặp nhau, 1 gói tin phải nhường đường cho gói tin kia đi rồi nó mới tiếp tục , điều này hay gây nên xung đột. Công nghệ này cũng sử dụng phương pháp CSMA/CD để chống xung đột và tiến hành gửi lại dữ liệu nếu xung đột xảy ra.*
-
-   o	Nếu HUB được kết nối vào Switch, nó phải hoạt động ở chế độ Hafl-duplex  để xác định xung đột.
-   o	Hafl-duplex Ethernet , đặc biệt trong mạng 10BaseT chỉ đạt mức hiệu quả 50-60% 
-   o	Trong một mạng lớn 10BaseT, phương pháp half-duplex chỉ đảm bảo băng thông giao động ở mức 3-4Mbps.
+   -	Nếu HUB được kết nối vào Switch, nó phải hoạt động ở chế độ Hafl-duplex  để xác định xung đột.
+   -	Hafl-duplex Ethernet , đặc biệt trong mạng 10BaseT chỉ đạt mức hiệu quả 50-60% 
+   -	Trong một mạng lớn 10BaseT, phương pháp half-duplex chỉ đảm bảo băng thông giao động ở mức 3-4Mbps.
     <br>
 -   ***10BASE-T** là một công nghệ trong mạng [Ethernet] cho phép các [máy tính] trong mạng được nối với nhau thông qua cáp đôi xoắn. Tên gọi của 10BASE-T xuất phát từ một vài đặc điểm vật lý, trong đó 10 tương ứng với tốc độ truyền tối đa 10 [Megabit] trên giây (Mb/s), BASE là viết gọn của [baseband], T là loại cáp xoắn đôi (Twisted Pairs). Vì sử dụng cáp xoắn đôi nên nó có thẻ chạy song công toàn phần (Full duplex).*
 </br>
@@ -29,7 +28,7 @@ Có 2 hình thức cơ bản để truy nhập vào các liên kết vật lý :
 
 ### b.	Ehternet ở Tầng Liên Kết Dữ Liệu ( Data Link Layer) : 
 Ethernet ở tầng Data Link đảm nhận về địa chỉ Ethernet hay địa chỉ vật lí MAC. 
-Ethernet cũng đảm nhiệm việc đóng gói các packet dữ liệu từ tầng Network xuống thành các frame nhỏ hơn để chuẩn bị cho việc truyền dữ liệu vào hệ thống mạng qua phương pháp truyền thông.
+Ethernet cũng đảm nhiệm việc đóng gói các packet dữ liệu từ tầng Network xuống thành các frame lớn hơn để chuẩn bị cho việc truyền dữ liệu vào hệ thống mạng qua phương pháp truyền thông.
 Có 4 loại gói dữ liệu Ethernet ( Frame) :
 -	Ethernet_II
 -	IEEE 802.3
