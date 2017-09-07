@@ -46,9 +46,9 @@ Có 4 loại gói dữ liệu Ethernet ( Frame) :
 
 **Ethernet Frames ( Các Khung Ethernet)**
 
--	Tầng Data Link đảm nhận nhiệm vụ gộp các bits thành các bytes và từ các byte thành các frames. Các khung frames được sử dụng ở tầng Data Link để đóng gói các packets cha được truyền từ tầng Network xuống ( mỗi packet sẽ chứa nhiều frame ). 
+-	Tầng Data Link đảm nhận nhiệm vụ gộp các bits thành các bytes và từ các byte thành các frames. Các khung frames được sử dụng ở tầng Data Link để đóng gói các packets được truyền từ tầng Network xuống . 
 -	Có 3 phương pháp truy nhập truyền thông : contention – giải quyết tranh chấp tài nguyên ( Ethernet) , token passing -phương pháp điều khiển luồng dùng kĩ thuật chuyển thẻ bài (Token Ring and FDDI), and polling (IBM Mainframes and 100VGAnylan).
--	Một khung Ethernet bắt đầu với một tiêu đề, trong đó có chứa các địa chỉ MAC nguồn và đích. Phần giữa của khung là dữ liệu thực tế. Khung kết thúc với một trường gọi là Khung Kiểm tra Sequence (FCS).
+-	Một khung frame Ethernet bắt đầu với một tiêu đề, trong đó có chứa các địa chỉ MAC nguồn và đích. Phần giữa của khung là dữ liệu thực tế. Khung kết thúc với một trường gọi là  Kiểm tra trạng thái frame (FCS- frame check sequence).
 
 #### 802.3 Frame :
 
