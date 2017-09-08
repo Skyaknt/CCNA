@@ -93,6 +93,12 @@ Giao thức **Spanning- Tree** sẽ giải quyết các vấn đề này.
 Thiết bị Switch ở mạng nội bộ sẽ sao chép frame hiện tại lên bộ nhớ đệm của nó và tính toán giá trị kiểm thử ( CRC ). Bởi vì nó là bản sao của frame hiện tại nên độ trễ khi đi qua Switch sẽ phụ thuộc vào độ dài của frame đó.
 Frame sẽ bị loại bỏ nếu nó chứa đựng lỗi CRC, nếu nó quá ngắn ( nhỏ hơn 64bytes đã bao gồm CRC ) ,hoặc nó qá dài ( nhiều hơn 1518 bytes bao gồm cả CRC ). Nếu frame không có lỗi gì, thì Switch sẽ kiểm tra địa chỉ đích của nó trên bảng địa chỉ MAC và xác định đầu ra cho nó. Sau đó frame sẽ được chuyển đến nơi mà nó hướng đến.
 
+### Cut-Through (Real Time)
+Cắt qua chuyển đổi là loại chính khác của chuyển mạch LAN. Với phương pháp này, chuyển đổi mạng LAN chỉ sao chép địa chỉ đích (sáu byte đầu tiên sau lời mở đầu) vào bộ đệm trên máy bay của nó. Sau đó, nó tìm kiếm địa chỉ đích phần cứng trong bảng chuyển mạch MAC, xác định giao diện đi ra, và chuyển tiếp frame tới đích. Một công tắc cắt giảm cung cấp độ trễ giảm bởi vì nó bắt đầu chuyển tiếp khung ngay khi nó đọc địa chỉ đích và xác định giao diện đi ra.
+Một số thiết bị chuyển mạch có thể được cấu hình để thực hiện chuyển mạch cắt qua trên cơ sở aper-port cho tới khi đạt được ngưỡng lỗi do người dùng xác định. Tại thời điểm đó, chúng sẽ tự động chuyển sang chế độ lưu trữ và chuyển tiếp để chúng sẽ ngừng chuyển tiếp các lỗi. Khi tỷ lệ lỗi trên cổng rơi xuống dưới ngưỡng, cổng sẽ tự động trở lại chế độ cắt.
+
+### FragmentFree (Modified Cut-Through)
+FragmentFree là một dạng chuyển đổi cắt qua sửa đổi, trong đó công tắc chờ đợi cho cửa sổ va chạm (64 byte) để vượt qua trước khi chuyển tiếp. Nếu một gói có lỗi, nó gần như luôn luôn xảy ra trong 64 byte đầu tiên. Chế độ phân mảnh Miễn phí kiểm tra lỗi tốt hơn chế độ cắt thông qua thực tế không tăng độ trễ. Đây là phương pháp chuyển đổi mặc định cho thiết bị chuyển mạch 1900
 
 
 
