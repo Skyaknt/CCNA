@@ -76,7 +76,7 @@ Mặc dù Redundant Links rất hữu dụng tuy nhiên nó lại gây ra nhiề
 
 3.	Bảng bộ lọc địa chỉ MAC sẽ bị loạn khi không biết thiết bị nguồn nằm ở đâu vì Switch có thể nhận cùng 1 frame từ nhiều nguồn link. Switch sẽ có thể không chuyển tiếp được frame đó đến đúng nơi vì nó phải luôn cập nhật bảng bộ lọc MAC từ các nguồn địa chỉ phần cứng khác nhau. Điều này đươc gọi là thrashing the MAC table ( tra tấn/ hành hạ).
 4.	Một trong những vấn đề lớn nhất là việc nhiều vòng lặp xảy ra cùng lúc trong mạng. Nó có nghĩa răng các vòng lặp có thể xảy ra trong các vòng lặp khác nữa ( vòng lặp kép ). Nếu một broadcast storm xảy ra, hệ thống mạng sẽ không thể thực hiện niệm vụ chuyển mạch các gói tin.
-Giao thức **Spanning- Tree** sẽ giải quyết các vấn đề này.
+Giao thức [Spanning- Tree](https://github.com/Skyaknt/CCNA-basic-/blob/master/Spanning%20Tree%20Protocol.md) sẽ giải quyết các vấn đề này.
 
 ## CÁC LOẠI CHUYỂN MẠCH TRONG MẠNG NỘI BỘ ( LAN Switching Types )
 
