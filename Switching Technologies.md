@@ -83,7 +83,7 @@ Giao thức [Spanning- Tree](https://github.com/Skyaknt/CCNA-basic-/blob/master/
 Độ trễ chuyển mạch gói tin thông qua Switch phụ thuộc vào chế độ chuyển mạch đã chọn. Có ba chế độ chuyển đổi: 
 - **Store and Forward** ( lưu trữ và chuyển tiếp ) : Khung dữ liệu hoàn chỉnh nhận được trên bộ nhớ đệm của Switch , một CRC được chạy và sau đó địa chỉ đích được tra cứu trong bảng lọc địa chỉ MAC  . 
 - **Cut-through** : Switch chỉ đợi cho đến khi địa chỉ MAC đích được nhận và sau đó tra cứu địa chỉ đó trên bảng địa chỉ MAC.
--**FragmentFree** : mặc định cho thiết bị Catalyst 1900 switch, đôi khi nó được coi như là chế độ cut-through đã qua được phê chuẩn. Nó sẽ kiểm tra 64 bytes đầu của frame để xem có bị phân mảnh không ( trong quá trình xung đột với gói tin khác có thể dẫn đến tính toàn vẹn không được đảm bảo ) trước khi chuyển tiếp nó.
+- **FragmentFree** : mặc định cho thiết bị Catalyst 1900 switch, đôi khi nó được coi như là chế độ cut-through đã qua được phê chuẩn. Nó sẽ kiểm tra 64 bytes đầu của frame để xem có bị phân mảnh không ( trong quá trình xung đột với gói tin khác có thể dẫn đến tính toàn vẹn không được đảm bảo ) trước khi chuyển tiếp nó.
 
 
 ![Imgur](https://i.imgur.com/b2LtiF9.png)
