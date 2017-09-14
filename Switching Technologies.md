@@ -30,7 +30,7 @@
 
 ![Imgur](https://i.imgur.com/1HrEOh2.png)
 
-### d.	3 chức năng của Layer-2 Switching :
+### d.	3 chức năng của Layer-2 Switching : 
 
 -	Address learning ( học địa chỉ mạng ) : Layer-2 Switches ghi nhớ địa chỉ của máy đích của mỗi frame nó nhận dược trên đường truyền và lưu nó vào bảng dữ liệu tài liệu MAC.
 -	Forward/filter decisions ( Quyết định Chuyển tiếp / Ngăn chặn 1 gói tin ): Khi 1 frame được tiếp nhận trên một giao diện, switch nhìn vào địa chỉ phần cứng đích và thấy giao diện lối ra trong cơ sở dữ liệu MAC.
