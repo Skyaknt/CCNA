@@ -62,6 +62,7 @@ ARP về cơ bản là một quá trình 2 chiều request/response giữa các 
 ![Imgur](https://i.imgur.com/vwI74cj.png)
 
 **Các bước hoạt động trong mạng local**
+
 B1. Source Device Checks Cache : Trong bước này, thiết bị sẽ kiểm tra cache ( bộ đệm ) của mình. Nếu đã có địa chỉ IP đích tương ứng với MAC nào đó rồi thì lập tức chuyển sang bước 9
 
 B2. Source Device Generates ARP Request Message : Bắt đầu khởi tạo gói tin ARP Request với các trường địa chỉ như trên
