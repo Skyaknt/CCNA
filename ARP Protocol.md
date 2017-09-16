@@ -63,23 +63,23 @@ ARP về cơ bản là một quá trình 2 chiều request/response giữa các 
 
 **Các bước hoạt động trong mạng local**
 
-B1. Source Device Checks Cache : Trong bước này, thiết bị sẽ kiểm tra cache ( bộ đệm ) của mình. Nếu đã có địa chỉ IP đích tương ứng với MAC nào đó rồi thì lập tức chuyển sang bước 9
+**B1. Source Device Checks Cache** : Trong bước này, thiết bị sẽ kiểm tra cache ( bộ đệm ) của mình. Nếu đã có địa chỉ IP đích tương ứng với MAC nào đó rồi thì lập tức chuyển sang bước 9
 
-B2. Source Device Generates ARP Request Message : Bắt đầu khởi tạo gói tin ARP Request với các trường địa chỉ như trên
+**B2. Source Device Generates ARP Request Message** : Bắt đầu khởi tạo gói tin ARP Request với các trường địa chỉ như trên
 
-B3. Source Device Broadcasts ARP Request Message : Thiết bị nguồn quảng bá gói tin ARP Request trên toàn mạng
+**B3. Source Device Broadcasts ARP Request Message** : Thiết bị nguồn quảng bá gói tin ARP Request trên toàn mạng
 
-B4. Local Devices Process ARP Request Message : Các thiết bị trong mạng đều nhận được gói tin ARP Request. Gói tin được xử lý bằng cách các thiết bị đều nhìn vào trường địa chỉ Target Protocol Address. Nếu trùng với địa chỉ của mình thì tiếp tục xử lý, nếu không thì hủy gói tin
+**B4. Local Devices Process ARP Request Message** : Các thiết bị trong mạng đều nhận được gói tin ARP Request. Gói tin được xử lý bằng cách các thiết bị đều nhìn vào trường địa chỉ Target Protocol Address. Nếu trùng với địa chỉ của mình thì tiếp tục xử lý, nếu không thì hủy gói tin
 
-B5. Destination Device Generates ARP Reply Message : Thiết bị với IP trùng với IP trong trường Target Protocol Address sẽ bắt đầu quá trình khởi tạo gói tin ARP Reply bằng cách lấy các trường Sender Hardware Address và Sender Protocol Address trong gói tin ARP nhận được đưa vào làm Target trong gói tin gửi đi. Đồng thời thiết bị sẽ lấy địa chỉ datalink của mình để đưa vào trường Sender Hardware Address
+**B5. Destination Device Generates ARP Reply Message** : Thiết bị với IP trùng với IP trong trường Target Protocol Address sẽ bắt đầu quá trình khởi tạo gói tin ARP Reply bằng cách lấy các trường Sender Hardware Address và Sender Protocol Address trong gói tin ARP nhận được đưa vào làm Target trong gói tin gửi đi. Đồng thời thiết bị sẽ lấy địa chỉ datalink của mình để đưa vào trường Sender Hardware Address
 
-B6. Destination Device Updates ARP Cache : Thiết bị đích ( thiết bị khởi tạo gói tin ARP Reply ) đồng thời cập nhật bảng ánh xạ địa chỉ IP và MAC của thiết bị nguồn vào bảng ARP cache của mình để giảm bớt thời gian xử lý cho các lần sau
+**B6. Destination Device Updates ARP Cache** : Thiết bị đích ( thiết bị khởi tạo gói tin ARP Reply ) đồng thời cập nhật bảng ánh xạ địa chỉ IP và MAC của thiết bị nguồn vào bảng ARP cache của mình để giảm bớt thời gian xử lý cho các lần sau
 
-B7. Destination Device Sends ARP Reply Message : Thiết bị đích bắt đầu gửi gói tin Reply đã được khởi tạo đến thiết bị nguồn. Gói tin reply là gói tin gửi unicast
+**B7. Destination Device Sends ARP Reply Message** : Thiết bị đích bắt đầu gửi gói tin Reply đã được khởi tạo đến thiết bị nguồn. Gói tin reply là gói tin gửi unicast
 
-B8. Source Device Processes ARP Reply Message : Thiết bị nguồn nhận được gói tin reply và xử lý bằng cách lưu trường Sender Hardware Address trong gói reply như địa chỉ phần cứng của thiết bị đích
+**B8. Source Device Processes ARP Reply Message** : Thiết bị nguồn nhận được gói tin reply và xử lý bằng cách lưu trường Sender Hardware Address trong gói reply như địa chỉ phần cứng của thiết bị đích
 
-B9. Source Device Updates ARP Cache : Thiết bị nguồn update vào ARP cache của mình giá trị tương ứng giữa địa chỉ network và địa chỉ datalink của thiết bị đích. Lần sau sẽ không còn cần tới request
+**B9. Source Device Updates ARP Cache** : Thiết bị nguồn update vào ARP cache của mình giá trị tương ứng giữa địa chỉ network và địa chỉ datalink của thiết bị đích. Lần sau sẽ không còn cần tới request
 
 ### <a name="lop3"> ARP với máy đích nằm ngoài mạng local : </a>
 
@@ -120,3 +120,10 @@ Khi một host A muốn gửi tới host B nhưng B nằm ngoài vùng mạng LA
 - **Dynamic ARP Cache Entries**: Đây là quá trình mà các thành phần địa chỉ hardware/IP được đưa vào ARP cache một cách hoàn toàn tự động bằng phần mềm sau khi đã hoàn tất quá trình phân giải địa chỉ. Chúng được lưu trong cache trong một khoảng thời gian và sau đó sẽ được xóa đi
 
 - Sau 10-20 phút bộ nhớ cache sẽ xóa các địa chỉ và câp nhật lại 
+
+
+<br>
+<br>
+### Tham Khảo: 
+1. https://letonphat.wordpress.com/2010/11/25/tổng-quan-arp-arp-cache-proxy-arp/
+2. https://www.cisco.com/c/en/us/support/docs/ip/dynamic-address-allocation-resolution/13718-5.html
