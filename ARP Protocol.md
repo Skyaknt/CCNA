@@ -1,14 +1,29 @@
 # Giao thức ARP ( Address Resolution Protocol)
+<hr>
+Mục lục :
+
+[I. Định nghĩa](#dinh-nghia)
+
+[II. Chức năng](#cn) 
+
+  [1. Phân giải địa chỉ IP sang địa chỉ MAC](#phangiai)
+  [2. Duy trì bộ nhớ ánh xạ ARP table](#duytri)
+  
+III. Cơ chế hoạt động
+
+<hr>
+
+## <a name="dinh-nghia"> I. Định nghĩa </a>
 *Giao thức phân giải địa chỉ (Address Resolution Protocol hay ARP) là một giao thức truyền thông được sử dụng để chuyển địa chỉ từ tầng mạng (Internet layer) sang tầng liên kết dữ liệu theo mô hình OSI. Đây là một chức năng quan trọng trong giao thức IP của mạng máy tính. ARP được định nghĩa trong RFC 826 vào năm 1982, [1] là một tiêu chuẩn Internet STD 37.
 ARP được sử dụng để từ một địa chỉ mạng (ví dụ một địa chỉ IPv4) tìm ra địa chỉ vật lý như một địa chỉ Ethernet (địa chỉ MAC), hay còn có thể nói là phân giải địa chỉ IP sang địa chỉ máy. ARP đã được thực hiện với nhiều kết hợp của công nghệ mạng và tầng liên kết dữ liệu, như IPv4, Chaosnet,..
 Trong mạng máy tính của phiên bản IPv6, chức năng của ARP được cung cấp bởi Neighbor Discovery Protocol (NDP).*
-## I. Chức năng
+## <a name="cn">II. Chức năng</a>
 
 **Có 2 chức năng chính** :
   - Chuyển đổi địa chỉ IPv4 sang địa chỉ MAC
   - Duy trì bộ nhớ ánh xạ giữa IP vs MAC ( cache of mappings )
       - ARP cache : bộ nhớ của ARP chứa nội dung cặp địa chỉ MAC vs địa chỉ IP kèm theo.
-## 1.	Chuyển đổi địa chỉ IP sang MAC :
+## <a name="phangiai">1.	Phân giải địa chỉ IP sang MAC : </a>
 -	Khi packets gửi từ tầng Network xuống Data links để đóng gói thành frames, có 1 cơ chế liên kết giữa địa chỉ IP ở tầng trên với địa chỉ MAC ở tầng dưới và lưu trong 1 bảng gọi là ARP table. 
     -	ARP table lưu trong Ram.
     -	Mỗi hàng trong ARP chứa 1 cặp : IP - MAC
@@ -16,7 +31,7 @@ Trong mạng máy tính của phiên bản IPv6, chức năng của ARP được
 -	Sử dụng trong mạng LAN nội bộ
 -	**Hoạt động** : một host A muốn gửi dữ liệu tới host B, nhưng chỉ biết địa chỉ IP của B , nó kiểm tra trong bảng ánh xạ ARP xem có cặp địa chỉ IP – MAC nào của B không, có thì n sẽ căn cứ vào địa chỉ MAC đó và gửi tới địch.
 o	Trường hợp không có, host A sẽ gửi 1 bản tin ARP request đến các host kèm theo địa chỉ IP của máy B, khi máy B nhận được, nó sẽ kiểm tra , nếu đúng địa chỉ IP của nó , máy B sẽ gửi bản tin trả lời lại kèm theo địa chỉ MAC của mình. Máy A căn cứ vào đó gửi bản tin tới máy B.
-## 2.	Duy trì bộ nhớ ánh xạ ARP :
+##<a name="duytri"> 2.	Duy trì bộ nhớ ánh xạ ARP :</a>
 
 Có 2 cách để thu thập địa chỉ IP -MAC :
 
@@ -27,7 +42,7 @@ Có 2 cách để thu thập địa chỉ IP -MAC :
     - Nếu trường hợp không có thiết bị nào phản hồi lại, packet sẽ bị xóa. Việc gửi bị thất bại này sẽ được báo lên các tầng trên, ở một số thiết bị  như router , nó sẽ quyết định có nên gửi đến máy nguồn 1 bản tin ICMPv4 thông báo lỗi hay không.
 -	Các cặp ánh xạ này sẽ được lưu trong một thời gian nhất định, sau một thời gian không có sự giao tiếp địa chỉ này sẽ bị xóa.
  
-## II. Cơ chế định tuyến của ARP : 
+## III. Cơ chế định tuyến của ARP : 
 
 ### 1. ARP với máy đích nằm ngoài mạng local :
 
