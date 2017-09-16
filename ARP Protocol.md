@@ -61,7 +61,8 @@ ARP về cơ bản là một quá trình 2 chiều request/response giữa các 
     - Reply : Là quá trình đáp trả gói tin ARP request, được gửi từ máy đích đến máy nguồn
     
 ![Imgur](https://i.imgur.com/vwI74cj.png)
-** Các bước hoạt động **
+
+**Các bước hoạt động**
 B1. Source Device Checks Cache : Trong bước này, thiết bị sẽ kiểm tra cache ( bộ đệm ) của mình. Nếu đã có địa chỉ IP đích tương ứng với MAC nào đó rồi thì lập tức chuyển sang bước 9
 
 B2. Source Device Generates ARP Request Message : Bắt đầu khởi tạo gói tin ARP Request với các trường địa chỉ như trên
@@ -109,3 +110,13 @@ Khi một host A muốn gửi tới host B nhưng B nằm ngoài vùng mạng LA
   - Tăng độ phức tạp của mạng
   - Nguy cơ an toàn bảo mật không được bảo đảm khi các router được thiết lập proxy, dẫn đến khả năng có thể giả mạo proxy.
    
+   
+### Mở rộng :
+
+#### <a name="cache"> ARP Caching </a>
+
+- **Static ARP Cache Entries**: Đây là cách mà các thành phần tương ứng trong bảng ARP được đưa vào lần lượt bởi người quản trị. Công việc được tiến hành một cách thủ công
+
+- **Dynamic ARP Cache Entries**: Đây là quá trình mà các thành phần địa chỉ hardware/IP được đưa vào ARP cache một cách hoàn toàn tự động bằng phần mềm sau khi đã hoàn tất quá trình phân giải địa chỉ. Chúng được lưu trong cache trong một khoảng thời gian và sau đó sẽ được xóa đi
+
+- Sau 10-20 phút bộ nhớ cache sẽ xóa các địa chỉ và câp nhật lại 
