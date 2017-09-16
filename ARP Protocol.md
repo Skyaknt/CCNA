@@ -122,8 +122,9 @@ Khi một host A muốn gửi tới host B nhưng B nằm ngoài vùng mạng LA
 - Sau 10-20 phút bộ nhớ cache sẽ xóa các địa chỉ và câp nhật lại 
 
 
-<br>
-<br>
+
 ### Tham Khảo: 
+
 1. https://letonphat.wordpress.com/2010/11/25/tổng-quan-arp-arp-cache-proxy-arp/
+
 2. https://www.cisco.com/c/en/us/support/docs/ip/dynamic-address-allocation-resolution/13718-5.html
