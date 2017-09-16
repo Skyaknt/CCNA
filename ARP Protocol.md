@@ -10,7 +10,7 @@ Mục lục :
   
    - [Duy trì bộ nhớ ánh xạ ARP table](#duytri)
   
-III. Cơ chế hoạt động
+[III. Cơ chế hoạt động](#coche)
   - [Cách thức hoạt động của ARP](#work)
   - [ARP trong môi trường mạng lớp 3](#lop3)
       - [ARP Proxy](#proxy)
@@ -47,7 +47,7 @@ Có 2 cách để thu thập địa chỉ IP -MAC :
     - Nếu trường hợp không có thiết bị nào phản hồi lại, packet sẽ bị xóa. Việc gửi bị thất bại này sẽ được báo lên các tầng trên, ở một số thiết bị  như router , nó sẽ quyết định có nên gửi đến máy nguồn 1 bản tin ICMPv4 thông báo lỗi hay không.
 -	Các cặp ánh xạ này sẽ được lưu trong một thời gian nhất định, sau một thời gian không có sự giao tiếp địa chỉ này sẽ bị xóa.
  
-## III. Cơ chế định tuyến của ARP : 
+## <a name="coche"> III. Cơ chế định tuyến của ARP : </a>
 
 ### <a name="work"> Cách thức hoạt động của ARP </a>
 ARP về cơ bản là một quá trình 2 chiều request/response giữa các thiết bị trong cùng mạng nội bộ. Thiết bị nguồn request bằng cách gửi một bản tin local broadcast trên toàn mạng. Thiết bị đích response bằng một bản tin unicast trả lại cho thiết bị nguồn.
@@ -104,6 +104,7 @@ Khi một host A muốn gửi tới host B nhưng B nằm ngoài vùng mạng LA
 
 **Ưu điểm**
   - Thuận tiện gửi tin giữa các phân vùng mạng khác nhau
+  
 **Nhược điểm**
   - Tăng độ phức tạp của mạng
   - Nguy cơ an toàn bảo mật không được bảo đảm khi các router được thiết lập proxy, dẫn đến khả năng có thể giả mạo proxy.
