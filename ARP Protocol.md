@@ -48,7 +48,7 @@ Có 2 cách để thu thập địa chỉ IP -MAC :
  
 ## <a name="coche"> III. Cơ chế định tuyến của ARP : </a>
 
-### <a name="work"> Cách thức hoạt động của ARP </a>
+### <a name="work"> Cách thức hoạt động của ARP trong mạng local </a>
 ARP về cơ bản là một quá trình 2 chiều request/response giữa các thiết bị trong cùng mạng nội bộ. Thiết bị nguồn request bằng cách gửi một bản tin local broadcast trên toàn mạng. Thiết bị đích response bằng một bản tin unicast trả lại cho thiết bị nguồn.
 
 **Các loại bản tin ARP**
