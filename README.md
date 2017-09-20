@@ -13,3 +13,4 @@
   **- LAN switching types**
   
 ### [2. Spanning Tree Protocol](https://github.com/Skyaknt/CCNA-basic-/blob/master/Spanning%20Tree%20Protocol.md)
+### [3. VTP Mode](https://github.com/Skyaknt/CCNA-basic-/blob/master/VTP%20mode.md)
