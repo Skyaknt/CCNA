@@ -4,7 +4,7 @@
 # Khái niệm và phân loại VTP mode
 
 ## Phụ lục:
-### 1.	Chế độ VTP
+### [1.	Chế độ VTP](#chedo)
   #### 1.1	Tạo bản tin VTP
   #### 1.2	Lắng nghe bản tin VTP
   #### 1.3	Tạo, xóa , sửa Vlan
@@ -26,7 +26,7 @@ Việc cấu hình VLAN có thể sẽ sảy ra 2 vấn đề sau:
 – Các cấu hình không đúng giữa các môi trường truyền khác nhau.
 ```
 
-### 1.	Chế độ VTP:
+### <a name="chedo" > 1.	Chế độ VTP: </a>
 Khi triển khai VTP trên hệ thống, bạn sẽ có ba sự lựa chọn chế độ làm việc cho Switch của mình: Server, Client và Transparent. Tùy thuộc vào mục đích quản trị và hạ tầng mạng mà ta lựa chọn sao cho hợp lý. Bảng sau đây tóm tắt sự khác nhau giữa ba chế độ làm việc:
 </br>
 ![Sự khác nhau giữa các mode](http://i.imgur.com/e0zqi9g.png)
