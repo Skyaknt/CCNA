@@ -7,10 +7,6 @@
 ## Chapter 2 : Switching Technologies
 
 ### [1. Layer2 - Switching technologies](https://github.com/Skyaknt/CCNA-basic-/blob/master/Switching%20Technologies.md)
-
-  **- 3 Functions of Switch**
-  
-  **- LAN switching types**
-  
 ### [2. Spanning Tree Protocol](https://github.com/Skyaknt/CCNA-basic-/blob/master/Spanning%20Tree%20Protocol.md)
 ### [3. VTP Mode](https://github.com/Skyaknt/CCNA-basic-/blob/master/VTP%20mode.md)
+
