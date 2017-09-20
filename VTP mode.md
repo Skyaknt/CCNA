@@ -8,7 +8,7 @@
   #### [1.1 Server mode](#server)
   #### [1.2 Client mode](#client)
   #### [1.3 Transparent mode](#trans)
-### 2.	So sánh phương thức làm việc giữa các mode
+### [2.	So sánh phương thức làm việc giữa các mode](#ss)
   #### [2.1 Tạo bản tin VTP](#bantin)
   #### [2.2	Lắng nghe bản tin VTP](#langnghe)
   #### [2.3	Tạo, xóa , sửa Vlan](#tao)
@@ -53,7 +53,7 @@ Khi triển khai VTP trên hệ thống, bạn sẽ có ba sự lựa chọn ch�
   *	Không đồng bộ hóa thông tin VLAN
   *	Lưu cấu hình vào NVRAM
 
-### 2.So sánh các chế độ làm việc của Switch khi chạy VTP
+### <a name="ss">2.So sánh các chế độ làm việc của Switch khi chạy VTP </a>
 
 <a name="bantin"> **Tạo bản tin VTP:** </a> Bất cứ khi nào người quản trị tạo, xóa hay sửa một VLAN và muốn thông tin này quảng bá đến các Switch khác trong cùng một vùng, người quản trị phải cấu hình nó trên Switch đang làm việc ở chế độ Server. Do đó chế độ Server là một nguồn tạo bản tin VTP. Ngoài ra ở chế độ Client cũng có khả năng là nguồn của một bản tin VTP mặc dù nó không thể tạo, xóa hay sửa một VLAN. Đó là khi một Switch mới gia nhập vào hệ thống nhưng nó đã mang sẵn cấu hình VTP của vùng khác, với cùng VTP domain và chỉ số revision lớn hơn tất cả trong hệ thống của chúng ta. Đó là lý do đôi lúc ta thấy làm việc ở chế độ Client cũng có khả năng là nguồn tạo bản tin VTP.
     - Một Switch hoạt động ở chế độ Transparent hoàn toàn có thể tạo VLAN nhưng nó sẽ không gửi đi bản tin quảng bá VLAN mới đó. Hay nói cách khác nó chỉ hoạt động độc lập, do đó nó không phải là nguồn tạo một bản tin VTP.
