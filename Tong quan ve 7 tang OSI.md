@@ -146,7 +146,8 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
  	*	MIDI : định dạng nhạc số
   	*	MPEG : điịnh dạng video cho đĩa CD với bit-rate lên tới 1.5Mbps
   	*	QuickTime: quản lí các ứng dụng chạy nhạc, video.
-
+- **Một số dịch vụ cơ bản ở tầng Ứng Dụng** :
+![Imgur](https://i.imgur.com/dFoR5Lg.png)
 #### <a name="8"> 2.3.	Tầng Phiên – Session Layer: </a>
 
 ![Imgur](http://i.imgur.com/bq75Irf.jpg)
