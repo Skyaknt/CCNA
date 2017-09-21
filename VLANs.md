@@ -5,10 +5,10 @@
 ### [2. Đặc điểm](#dd)
 ### [3. Cơ chế hoạt động](#cc)
 #### 	[3.1 Phương thức tạo VLANs](#met)
-		[3.2 Các loại VLANs](#type)
-		[3.3 Hình thức truy cập](#way)
+#### 	[3.2 Các loại VLANs](#type)
+#### 	[3.3 Hình thức truy cập](#way)
 		
-		<hr>
+<hr>
 		
 ### <a name="dn"> 1. Định nghĩa </a>
 
@@ -29,21 +29,21 @@ VLANs là các hệ thống mạng con nằm trên cùng 1 switch được chia 
 
 #### Vlan ID
 
-	**Normal Range ID** : 
+**Normal Range ID** : 
 	
-		- Range IDs : "1- 1005"
-		- "1002-1005" sử dụng cho Token Ring và FDDI Vlans
-		- Vlan 1, 1002-1005 được tự động tạo và không thể xóa
-		- Lưu trữ trong bộ nhớ vlan.dat file trong bộ nhớ flash của Switch
-		- VLAN trunking Protocol ( VTP ) - quản lí file cấu hình giữa các Switches chỉ có thể lưu VLan Normal range ID và lưu trong VLSN database line.
+- Range IDs : "1- 1005"
+- "1002-1005" sử dụng cho Token Ring và FDDI Vlans
+- Vlan 1, 1002-1005 được tự động tạo và không thể xóa
+- Lưu trữ trong bộ nhớ vlan.dat file trong bộ nhớ flash của Switch
+- VLAN trunking Protocol ( VTP ) - quản lí file cấu hình giữa các Switches chỉ có thể lưu VLan Normal range ID và lưu trong VLSN database line.
 	
-	**Extended Range ID** :
+**Extended Range ID** :
 	
-		- Range ID : 1006-4094
-		- Sử dụng cho nhà cung cấp dịch vụ
-		- Có ít tùy chỉnh chức năng hơn Normal range
-		- Lưu trong file cấu hình.
-		- VTP không học dãy địa chỉ Vlan này.
+- Range ID : 1006-4094
+- Sử dụng cho nhà cung cấp dịch vụ
+- Có ít tùy chỉnh chức năng hơn Normal range
+- Lưu trong file cấu hình.
+- VTP không học dãy địa chỉ Vlan này.
 		
 ### <a name="cc"> 3. Phương thức hoạt động </a>
 #### <a name="met"> 3.1 Phương thức tạo VLANs </a>
@@ -101,17 +101,17 @@ Switch(config-if)#switchport trunk native vlan vlan-id
 - Một công nghệ của Cisco, Voice VLAN được cấu hình riêng biệt và tách rời khỏi các hệ thống khác ( Voice Traffic ).
 - Dùng cho hệ thống điện thoại, dữ liệu đi từ client qa Cisco IP Phone ( máy điện thoại )  bằng một VLan, sau đó sẽ đươc chuyển tiếp tới thiết bị đích bằng một VLAN khác ( thường là data VLAN )
  
-		Đảm bảo băng thông cho chất lượng cuộc gọi
-		+ Truyền dữ liệu được ưu tiên bởi dùng riêng 1 đường mạng.
-		+ Có thể định tuyến xung qua một hệ thống mạng quá tải.
-		+ Thời gian delay rất ngắn ( <150mms)
+	+ Đảm bảo băng thông cho chất lượng cuộc gọi
+	+ Truyền dữ liệu được ưu tiên bởi dùng riêng 1 đường mạng.
+	+ Có thể định tuyến xung qua một hệ thống mạng quá tải.
+	+ Thời gian delay rất ngắn ( <150mms)
 		
 #### <a name="way"> 3.3 Hình thức truy cập </a>
 
 ##### a. Acess Links :
 
 - Sử dụng cho mạng nội vùng
-- Các thiết bị truy cập vào Access Link sẽ nằm trong Native VLANs( Vlan nội vùng )
+- Các thiết bị truy cập vào Access Link sẽ nằm trong Native VLANs ( Vlan nội vùng )
 - Chúng không cần quan tâm tới các thành viên khác trong cùng Broadcast domain
 - Khi frame từ nơi khác qua đường Trunking đến Switch, nó sẽ loại bỏ các thông tin VLAN trên frame đó rồi dựa trên địa chỉ MAC mà chuyển tiếp frame đến máy đích trong mạng nội vùng của nó.
 
