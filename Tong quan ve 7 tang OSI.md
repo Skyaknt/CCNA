@@ -14,12 +14,19 @@
 ##### [a. Mô hình OSI là gì?](#4)
 ##### [b. Tại sao phải phân lớp?](#5)
 #### 2. Cái nhìn khái quát về 7 tầng OSi : đặc điểm, chức năng mỗi tầng
+
 [2.1. Tầng Ứng dụng ( Application Layer )](#6)
+
 [2.2. Tầng Phiên dịch ( Presentation Layer )](#7)
+
 [2.3. Tầng Phiên ( Session Layer )](#8)
+
 [2.4. Tầng Giao vận ( Traansport Layer )](#9)
-[2.5. Tầng Mạng ( Network Layer)(#10)
+
+[2.5. Tầng Mạng ( Network Layer)](#10)
+
 [2.6. Tầng Liên kết dữ liệu ( Datalink Layer )](#11)
+
 [2.7. Tầng Vật lý ( Physical Layer )](#12)
 
 <hr>	
