@@ -31,6 +31,7 @@
 
 <hr>	
 <br>
+
 ## A. Nền tảng của truyền thông: 
 Để các máy tính và các thiết bị trong mạng truyền thông được với nhau thì hệ thống mạng phải có phần cứng và phần mềm. Từ phần cứng và phần mềm ta chia thành 4 thành phần: 
 - Thiết bị đầu cuối: máy tính, laptop, Server, điện thoại. Các thiết bị này đều phải cài đặt Hệ điều hành hoặc phần mềm.
