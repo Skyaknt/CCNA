@@ -10,4 +10,4 @@
 ### [2. Spanning Tree Protocol](https://github.com/Skyaknt/CCNA-basic-/blob/master/Spanning%20Tree%20Protocol.md)
 ### [3. VLANs](https://github.com/Skyaknt/CCNA-basic-/blob/master/VLANs.md)
 ### [4. VTP Mode](https://github.com/Skyaknt/CCNA-basic-/blob/master/VTP%20mode.md)
-### [5.ARP Protocol](https://github.com/Skyaknt/CCNA-basic-/blob/master/ARP%20Protocol.md)
+### [5. ARP Protocol](https://github.com/Skyaknt/CCNA-basic-/blob/master/ARP%20Protocol.md)
