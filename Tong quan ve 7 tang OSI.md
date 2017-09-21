@@ -11,8 +11,8 @@
 
 ### B. Tổng quan về mô hình OSI
 #### 1. Định nghĩa
-##### [a. Mô hình OSI là gì?](#4)
-##### [b. Tại sao phải phân lớp?](#5)
+##### [1.1. Mô hình OSI là gì?](#4)
+##### [1.2. Tại sao phải phân lớp?](#5)
 #### 2. Cái nhìn khái quát về 7 tầng OSi : đặc điểm, chức năng mỗi tầng
 
 [2.1. Tầng Ứng dụng ( Application Layer )](#6)
@@ -98,10 +98,10 @@ hạn tải xuống 20Mbps hoặc 50Mbps.
 
 ### 1. Định nghĩa :
 
-#### <a name="4"> a. Mô hình OSI là gì? </a>
+#### <a name="4"> 1.1. Mô hình OSI là gì? </a>
 
 Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối các hệ thống mở, là một mô hình phân lớp nổi tiếng. Được phác thảo vào năm 1971 và hoàn thiện vào năm 1984. Mô hình này chia thành 7 lớp: Application, Presentation, Session, Transport, Network, Data link, Physical.
-#### <a name="5"> b. Tại sao lại phân lớp? </a>
+#### <a name="5"> 1.2. Tại sao lại phân lớp? </a>
 Để truyền thông được chúng ta phải xây dựng một hệ thống mạng. Trong hệ thống mạng bao gồm thiết bị vật lý, đường truyền, dữ liệu và các giao thức. Một công ty không thể sản xuất và thiết kế được hết bấy nhiêu chức năng, nên người ta phải phân ra các lớp công việc để phát triển phù hợp.
 
 - Các ưu điểm khi phân lớp:
