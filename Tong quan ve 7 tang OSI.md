@@ -4,23 +4,26 @@
 
 ## Mục lục :
 ### A. Nền tảng của truyền thông
-	1.Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông
-	2. Tìm hiểu về giao thức ( protocol ) trong truyền thông
-	3. Các bước truyền thông qua mạng trong mô hình OSI
-### B. Tổng quan về mô hình OSI
-	1. Định nghĩa
-		a. Mô hình OSI là gì?
-		b. Tại sao phải phân lớp?
-	2. Cái nhìn khái quát về 7 tầng OSi : đặc điểm, chức năng mỗi tầng
-		2.1. Tầng Ứng dụng ( Application Layer )
-		2.2. Tầng Phiên dịch ( Presentation Layer )
-		2.3. Tầng Phiên ( Session Layer )
-		2.4. Tầng Giao vận ( Traansport Layer )
-		2.5. Tầng Mạng ( Network Layer)
-		2.6. Tầng Liên kết dữ liệu ( Datalink Layer )
-		2.7. Tầng Vật lý ( Physical Layer )
-	
 
+#### [1.Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông](#1)
+#### [2. Tìm hiểu về giao thức ( protocol ) trong truyền thông](#2)
+#### [3. Các bước truyền thông qua mạng trong mô hình OSI](#3)
+
+### B. Tổng quan về mô hình OSI
+#### 1. Định nghĩa
+##### [a. Mô hình OSI là gì?](#4)
+##### [b. Tại sao phải phân lớp?](#5)
+#### 2. Cái nhìn khái quát về 7 tầng OSi : đặc điểm, chức năng mỗi tầng
+[2.1. Tầng Ứng dụng ( Application Layer )](#6)
+[2.2. Tầng Phiên dịch ( Presentation Layer )](#7)
+[2.3. Tầng Phiên ( Session Layer )](#8)
+[2.4. Tầng Giao vận ( Traansport Layer )](#9)
+[2.5. Tầng Mạng ( Network Layer)(#10)
+[2.6. Tầng Liên kết dữ liệu ( Datalink Layer )](#11)
+[2.7. Tầng Vật lý ( Physical Layer )](#12)
+
+<hr>	
+<br>
 ## A. Nền tảng của truyền thông: 
 Để các máy tính và các thiết bị trong mạng truyền thông được với nhau thì hệ thống mạng phải có phần cứng và phần mềm. Từ phần cứng và phần mềm ta chia thành 4 thành phần: 
 - Thiết bị đầu cuối: máy tính, laptop, Server, điện thoại. Các thiết bị này đều phải cài đặt Hệ điều hành hoặc phần mềm.
@@ -28,7 +31,7 @@
 - Thông tin: nội dung website, thư điện tử, nội dung chat... Dữ liệu này này sẽ được chia thành các mảnh để đưa vào đường truyền gọi là Segment. Để trao đổi được thông tin thì phải có người gửi và người nhận. 
 - Giao thức (rule): cho phép truy cập tới dịch vụ gì, được đi theo đường nào, dữ liệu được tải ra sao,giao thức nào được áp dụng là gì. Vd: truyền theo Web phải sử dụng theo port 80 hoặc 443.
 
-### 1. Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông: 
+### <a name="1"> 1. Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông: </a>
 
 + Trong mạng LAN: Các PC, Switch, Router giao tiếp với nhau bằng địa chỉ MAC.
 
@@ -40,7 +43,7 @@
 
 + Trên Các Router có bảng định tuyến để định đúng đường đi. 
 
-### 2. Tìm hiểu về giao thức (Protocol) trong truyền thông: 
+### <a name="2"> 2. Tìm hiểu về giao thức (Protocol) trong truyền thông: </a>
 
 + Giao thức dùng để định dạng cấu trúc của gói tin. Gói tin đi theo Web thì phải theo định dạng của Web,
 
@@ -57,7 +60,7 @@ phân quyền truy cập tài nguyên. Người dùng có thể copy dữ liệu
 + Cho phép truyền hoặc tải bao nhiêu dữ liệu qua đường truyền: đường truyền là 100Mbps/s chúng ta có thể giới 
 
 hạn tải xuống 20Mbps hoặc 50Mbps.
-### 3. Các bước truyền thông qua mạng trong mô hình OSI: 
+### <a name="3">  3. Các bước truyền thông qua mạng trong mô hình OSI: </a>
 
 - Xét trường hợp cụ thể là truy cập vào trang Google.
 
@@ -87,10 +90,10 @@ hạn tải xuống 20Mbps hoặc 50Mbps.
 
 ### 1. Định nghĩa :
 
-#### a. Mô hình OSI là gì?
+#### <a name="4"> a. Mô hình OSI là gì? </a>
 
 Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối các hệ thống mở, là một mô hình phân lớp nổi tiếng. Được phác thảo vào năm 1971 và hoàn thiện vào năm 1984. Mô hình này chia thành 7 lớp: Application, Presentation, Session, Transport, Network, Data link, Physical.
-#### b. Tại sao lại phân lớp? 
+#### <a name="5"> b. Tại sao lại phân lớp? </a>
 Để truyền thông được chúng ta phải xây dựng một hệ thống mạng. Trong hệ thống mạng bao gồm thiết bị vật lý, đường truyền, dữ liệu và các giao thức. Một công ty không thể sản xuất và thiết kế được hết bấy nhiêu chức năng, nên người ta phải phân ra các lớp công việc để phát triển phù hợp.
 
 - Các ưu điểm khi phân lớp:
@@ -111,7 +114,7 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
 ![](http://i.imgur.com/VbZQJEv.png)
 ### 2. Cái nhìn tổng quan về 7 tầng OSI : đặc điểm, chức năng 
 
-#### 2.1.	Tầng Ứng Dụng – Application Layer:
+#### <a name="6"> 2.1.	Tầng Ứng Dụng – Application Layer: </a>
 
 ![Imgur](http://i.imgur.com/ZWsh1jb.jpg)
 
@@ -123,7 +126,7 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
       - Electronic Data Enterchange ( EDI)
 	  
 
-#### 2.2.	Tầng Phiên Dịch – Presentation Layer: 
+#### <a name="7">  2.2.	Tầng Phiên Dịch – Presentation Layer: </a>
 
 ![Imgur](http://i.imgur.com/jtwNY81.jpg) 
 
@@ -136,7 +139,7 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
   	*	MPEG : điịnh dạng video cho đĩa CD với bit-rate lên tới 1.5Mbps
   	*	QuickTime: quản lí các ứng dụng chạy nhạc, video.
 
-#### 2.3.	Tầng Phiên – Session Layer:
+#### <a name="8"> 2.3.	Tầng Phiên – Session Layer: </a>
 
 ![Imgur](http://i.imgur.com/bq75Irf.jpg)
 
@@ -150,7 +153,7 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
  	*	Structured Query Language ( SQL ) : cung cấp cho người dùng cách thức đơn giản để xác định thông tin cần thiết ở cả hệ thống nội bộ và bên ngoài.
  	*	Remote Procedure Call ( RPC ) 
  	*	AppleTalk Session Protocol (ASP) : thiết lập và duy trì phiên làm việc giữa các máy khách của Appletalk và máy chủ.
-  #### 2.4.	Tầng Giao vận – Transport Layer :
+  #### <a name="9"> 2.4. Tầng Giao vận – Transport Layer : </a>
  
  ![Imgur](http://i.imgur.com/6kgB8Mv.jpg)
 
@@ -192,7 +195,7 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
   - Khi bất cứ segment nào được gửi đi, phương pháp đó sẽ gửi một xác nhận tới máy gửi rằng nó đã nhận được hay chưa, được rồi thì máy nhận sẽ gửi segment tiếp theo, nếu chưa thì gửi lại segment vừa rồi.
 ![Imgur](http://i.imgur.com/CPIC5EW.png)
 
- #### 2.5.Tầng Mạng – Network Layer : Thiết bị hoạt động ở lớp 3 - Router
+ #### <a name="10">  2.5.Tầng Mạng – Network Layer : Thiết bị hoạt động ở lớp 3 - Router </a>
  ![Imgur](http://i.imgur.com/IqU2F5X.gif)
  
 -	Lớp Mạng có trách nhiệm định tuyến thông qua mạng và địa chỉ mạng. Điều này có nghĩa là lớp Mạng có trách nhiệm truyền tải lưu lượng giữa các thiết bị không nằm trong vùng mạng nội bộ. 
@@ -224,7 +227,7 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
    -  Router có thể cung cấp Chất lượng Dịch vụ (QoS) cho các loại lưu lượng mạng cụ thể.*
   
 
- #### 2.6.	Tầng liên kết dữ liệu – Data Link Layer : Thiết bị hoạt động ở lớp 2 - Switch
+ #### <a name="11">  2.6.	Tầng liên kết dữ liệu – Data Link Layer : Thiết bị hoạt động ở lớp 2 - Switch </a>
 ![Imgur](http://i.imgur.com/49Urdvb.png)
 
 **Chức năng :** 
@@ -247,7 +250,7 @@ Dữ liệu truyền qua đường truyền bằng giao thức truyền thông t
     - Một lợi ích khác của chuyển mạch LAN ( LAN switching ) so với hub là mọi frame truyền qua switch sẽ được chuyển tiếp ngay lập tức vì mỗi frame đều có miền xung đột riêng.
     - Switch không thể phiên dịch các loại truyền thông khác nhau. Có nghĩa là nếu một thiết bị kết nối vào switch phải sử dụng một loại Ethernet frame riêng. Nếu muốn kết nối vào mạng hình sao hoặc mạng Lan thì cần router để cung cấp dịch vụ phiên dịch.
 
-#### 2.7.	Tầng Vật Lý – Physical Layer :
+#### <a name="12">  2.7.	Tầng Vật Lý – Physical Layer : </a>
 ![Imgur](http://i.imgur.com/ozzdFZy.gif)
 
 -	Chức năng : gửi và nhận bits 0,1
