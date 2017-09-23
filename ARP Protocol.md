@@ -34,7 +34,7 @@
 -	Địa chỉ IP và địa chỉ MAC trong bảng gắn liền với nhau, từ địa chỉ IP có thể truy ra địa chỉ MAC của thiết bị.
 -	Sử dụng trong mạng LAN nội bộ
 -	**Hoạt động** : một host A muốn gửi dữ liệu tới host B, nhưng chỉ biết địa chỉ IP của B , nó kiểm tra trong bảng ánh xạ ARP xem có cặp địa chỉ IP – MAC nào của B không, có thì n sẽ căn cứ vào địa chỉ MAC đó và gửi tới địch.
-o	Trường hợp không có, host A sẽ gửi 1 bản tin ARP request đến các host kèm theo địa chỉ IP của máy B, khi máy B nhận được, nó sẽ kiểm tra , nếu đúng địa chỉ IP của nó , máy B sẽ gửi bản tin trả lời lại kèm theo địa chỉ MAC của mình. Máy A căn cứ vào đó gửi bản tin tới máy B.
+      - Trường hợp không có, host A sẽ gửi 1 bản tin ARP request đến các host kèm theo địa chỉ IP của máy B, khi máy B nhận được, nó sẽ kiểm tra , nếu đúng địa chỉ IP của nó , máy B sẽ gửi bản tin trả lời lại kèm theo địa chỉ MAC của mình. Máy A căn cứ vào đó gửi bản tin tới máy B.
 ## <a name="duytri"> Duy trì bộ nhớ ánh xạ ARP :</a>
 
 Có 2 cách để thu thập địa chỉ IP -MAC :
