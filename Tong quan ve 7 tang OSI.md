@@ -36,7 +36,7 @@
 Để các máy tính và các thiết bị trong mạng truyền thông được với nhau thì hệ thống mạng phải có phần cứng và phần mềm. Từ phần cứng và phần mềm ta chia thành 4 thành phần: 
 - Thiết bị đầu cuối: máy tính, laptop, Server, điện thoại. Các thiết bị này đều phải cài đặt Hệ điều hành hoặc phần mềm.
 - Đường truyền: không dây và có dây. Switch, Router, Modem được kết nối lại với nhau. Để kết nối gần ta dùng dây cáp đồng, kết nối xa thì dùng dây cáp quang hoặc dùng sóng vệ tinh.
-- Thông tin: nội dung website, thư điện tử, nội dung chat... Dữ liệu này này sẽ được chia thành các mảnh để đưa vào đường truyền gọi là Segment. Để trao đổi được thông tin thì phải có người gửi và người nhận. 
+- Thông tin: nội dung website, thư điện tử, nội dung chat... Dữ liệu này sẽ được chia thành các khung để đưa vào đường truyền gọi là Frames. Để trao đổi được thông tin thì phải có người gửi và người nhận. 
 - Giao thức (rule): cho phép truy cập tới dịch vụ gì, được đi theo đường nào, dữ liệu được tải ra sao,giao thức nào được áp dụng là gì. Vd: truyền theo Web phải sử dụng theo port 80 hoặc 443.
 
 ### <a name="1"> 1. Cách thức làm việc của mạng LAN, WAN, Internet trong truyền thông: </a>
