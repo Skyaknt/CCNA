@@ -132,7 +132,9 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
       - World wide web : Kết nối tới vô số các server . Các dữ liệu cơ bản như đồ họa, chữ, video, âm thanh.
       - Email – Gateways: linh hoạt trong việc sử dụng SMTP hoặc tiêu chuẩn X.400 để chuyển thư giữa các ứng dụng thư điện tử khác nhau.
       - Electronic Data Enterchange ( EDI)
-	  
+
+- **Một số dịch vụ cơ bản ở tầng Ứng Dụng** :
+![Imgur](https://i.imgur.com/dFoR5Lg.png)
 
 #### <a name="7">  2.2.	Tầng Phiên Dịch – Presentation Layer: </a>
 
@@ -146,8 +148,7 @@ Open System Interconnection, tạm dịch là Mô hình tham chiếu kết nối
  	*	MIDI : định dạng nhạc số
   	*	MPEG : điịnh dạng video cho đĩa CD với bit-rate lên tới 1.5Mbps
   	*	QuickTime: quản lí các ứng dụng chạy nhạc, video.
-- **Một số dịch vụ cơ bản ở tầng Ứng Dụng** :
-![Imgur](https://i.imgur.com/dFoR5Lg.png)
+
 #### <a name="8"> 2.3.	Tầng Phiên – Session Layer: </a>
 
 ![Imgur](http://i.imgur.com/bq75Irf.jpg)
