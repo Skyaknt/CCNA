@@ -1,4 +1,4 @@
-# CCNA-basic-
+# CCNA basic
 ## Chapter 1 : Internetworking
 ### [1. Overview 7 OSI floors](https://github.com/Skyaknt/CCNA-basic-/blob/master/Tong%20quan%20ve%207%20tang%20OSI.md)
 
