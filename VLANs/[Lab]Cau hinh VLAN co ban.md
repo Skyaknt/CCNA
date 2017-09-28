@@ -7,22 +7,35 @@
 
 
 ## Learning Objectives
+
 • Perform basic configuration tasks on a switch
+
 • Create VLANs
+
 • Assign switch ports to a VLAN
+
 • Add, move, and change ports
+
 • Verify VLAN configuration
+
 • Enable trunking on inter-switch connections
+
 • Verify trunk configuration
+
 • Save the VLAN configuration
+
 ### Task 1: Perform Basic Switch Configurations
 
 Perform Basic Switch Configurations. Packet Tracer will only grade switch hostnames.
 
 • Configure the switch hostnames.
+
 • Disable DNS lookup.
+
 • Configure an EXEC mode password of class.
+
 • Configure a password of cisco for console connections.
+
 • Configure a password of cisco for vty connections.
 
 ### Task 2: Configure and Activate Ethernet Interfaces
@@ -168,9 +181,7 @@ VLAN 1 as the native VLAN.
 S1(config)#interface fa0/1
 S1(config-if)#switchport mode trunk
 S1(config-if)#switchport trunk native vlan 99
-S1(config-if)#interface fa0/2CCNA Exploration
-LAN Switching and Wireless: VLANs PT Activity 3.5.1: Basic VLAN Configuration
-All contents are Copyright © 1992–2007 Cisco Systems, Inc. All rights reserved. This document is Cisco Public Information. Page 5 of 6
+S1(config-if)#interface fa0/2CCNA 
 S1(config-if)#switchport mode trunk
 S1(config-if)#switchport trunk native vlan 99
 S1(config-if)#end
