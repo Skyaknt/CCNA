@@ -193,7 +193,7 @@ instance can hold a group of VLANs and gets its own spanning tree
 calculation.
 MST is convenient in that it is backward compatible with PVST. Two
 switches only run MST with each other if they are in the same MST region.
-An MST region is defined by switches having identical region names,5 - 12 CCNP: Building Multilayer Switched Networks v5.0 - Lab 3-4 Copyright © 2006, Cisco Systems, Inc
+An MST region is defined by switches having identical region names,
 revision numbers, and VLAN-to-instance assignments. If they differ by any
 single attribute, they are considered different MST regions and fall back to
 PVST.
