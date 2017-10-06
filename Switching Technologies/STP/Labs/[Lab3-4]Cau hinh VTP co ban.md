@@ -141,7 +141,7 @@ Fa0/8 Desg FWD 19 128.10 P2p
 Fa0/9 Desg FWD 19 128.11 P2p
 Fa0/10 Desg FWD 19 128.12 P2p
 Fa0/11 Root FWD 19 128.13 P2p
-Fa0/12 Altn BLK 19 128.14 P2p4 - 12 CCNP: Building Multilayer Switched Networks v5.0 - Lab 3-4 Copyright © 2006, Cisco Systems, Inc
+Fa0/12 Altn BLK 19 128.14 P2p
 <output omitted>
 VLAN0090
 Spanning tree enabled protocol ieee
