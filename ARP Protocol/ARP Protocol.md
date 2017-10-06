@@ -91,7 +91,7 @@ Khi một host A muốn gửi tới host B nhưng B nằm ngoài vùng mạng LA
 -	Máy B nhận được bản tin request, reply lại bao gồm địa chỉ MAC của mình, router sẽ gửi bản tin từ máy A đến máy B.
 
 #### <a name="proxy"> ARP Proxy : </a> 
-- * Dùng cho các dải mạng khác nhau ở 2 phân vùng mạng khác nhau, giao tiếp qua Router
+- **Dùng cho các dải mạng khác nhau ở 2 phân vùng mạng khác nhau, giao tiếp qua Router**
 
 *Khi 2 máy A và B ở 2 phân vùng mạng khác nhau muốn gửi dữ liệu cho nhau phải qua Router . Router không chuyển tiếp các gói tin broadcast nên 2 máy sẽ không gửi được cho nhau , ARP Proxy xinh ra để giải quyết vấn đề này.*
 
