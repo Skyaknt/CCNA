@@ -1,7 +1,7 @@
 # Spanning Tree Protocol
 Giao Thức Phân nhánh chống vòng lặp 
 
-## Vòng lặp chuyển mạch
+## Chuyển mạch chống loop
 Một Switch layer 2 chỉ thuộc về một miền broadcast, và chỉ chuyển đi các gói tin broadcast và multicast ra ngoài bằng cổng một cổng chính .
 Khi hiện tượng Vòng lặp trong chuyển mạch xảy ra, một cơn bão broadcast phá hoại sẽ xuất hiện chỉ trong 1 vài giây. Bão tin broadcast xảy ra khi mà các bản tin broadcast được gửi đi không ngừng giữa các Switch và tạo thành một vòng lặp giữa chúng. Bão Broadcast sẽ ngăn chặn hoàn toàn các kết nối lưu thông trong hệ thống mạng.
 Cùng xem ví dụ sau : 
