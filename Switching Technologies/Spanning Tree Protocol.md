@@ -1,15 +1,15 @@
 # Spanning Tree Protocol
 Giao Thức Phân nhánh chống vòng lặp 
 
-#### Mục lục
+### Mục lục
 
-I. Tổng quan về STP
+#### I. Tổng quan về STP
 
 [1. Định nghĩa](#dn)
 
 [2. Chuyển mạnh chống loop](#cm)
 
-II. Hoạt động
+#### II. Hoạt động
 
 [1. Bầu chọn Root Bridge](#rb)
   
@@ -17,7 +17,7 @@ II. Hoạt động
  
 [3. Bàu chọn Designated Port](#des)
 
-[III. Các loại Spanning Tree](#type)
+#### III. Các loại Spanning Tree
 
 [1. Độc quyền Cisco](#dq)
 
