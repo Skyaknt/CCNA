@@ -246,10 +246,6 @@ Switch(config-if)# spanning-tree vlan 101 port-priority 32
 - PortFast tạo ra một hoạt động chuyển mạch hoặc trunk port để vào trạng thái chuyển tiếp cây spanning ngay lập tức, bỏ qua các trạng thái **listening** và **learning**.
 - Bạn có thể sử dụng PortFast trên các cổng switch hoặc trunk được kết nối với một máy trạm, switch hoặc server duy nhất để cho phép các thiết bị kết nối với mạng ngay lập tức, thay vì chờ cổng chuyển từ trạng thái **listening** và **learning** sang trạng thái **forwarding** .
 
-Tham khảo : 
-
-
-
 
 ## Tham khảo :
 (1). http://www.vnpro.org/forum/forum/ccnp®-và-ccdp®/switch-bcmsn/7514-các-loại-spanning-tree
