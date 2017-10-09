@@ -32,6 +32,10 @@ Việc xây dựng mô hình STP là một quá trình hội tụ đa tầng, g�
 Một khi các topo đầy đủ được xác định, và các vòng được loại bỏ, các thiết bị chuyển mạch được coi là mạng hội tụ .
 STP được **kích hoạt** mặc định trên tất cả các thiết bị chuyển mạch của Cisco, cho tất cả các VLAN
 
+**Tổng quát về chức năng các cổng :**
+
+![Imgur](https://i.imgur.com/UR8onZU.png)
+
 ## Bầu chọn Root Bridge 
 
 Bước đầu tiên trong quá trình hội tụ STP là bầu chọn **Root Bridge** , cái mà sẽ là điểm tham chiếu trung tâm cho mô hình mạng. 
@@ -66,9 +70,6 @@ Mỗi Switch chỉ có thể có **1 root port** . Root Bridge **không có** ro
 
 Mỗi một liên kết 1Gbps  có chi phí ( path cost ) là 4. SwitchA có chi phí tích lũy đường truyền là 0 vì nó là **Root Bridge** . Vì vậy, khi Switch A gửi gói tin BPDU’s của nó đi, bản tin đó sẽ quảng bá path cost của Switch	A là 0.
 
-**Bản tin BPDU :**
-
-![Imgur](https://i.imgur.com/V3ZWJK3.png)
 
 **Switch B** có 2 đường đi để đến được Root Bridge :
 -	Một đường trực tiếp đến Switch A, với path cost là 4
@@ -157,7 +158,13 @@ Switch(config-if)# spanning-tree vlan 101 port-priority 32
 -	**Chỉ số port ID của thiết bị gửi thấp nhất** ( Lowest sender port ID)
 **Bridge ID thấp nhất luôn được sử dụng để xác định Root Bridge.**
 
-**Tổng quát về chức năng các cổng :**
+### Bản tin BPDU :
 
-![Imgur](https://i.imgur.com/UR8onZU.png)
+![Imgur](https://i.imgur.com/V3ZWJK3.png)
+
+
+### Port Fast :
+
+
+
 
