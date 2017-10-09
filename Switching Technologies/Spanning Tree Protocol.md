@@ -165,6 +165,8 @@ Switch(config-if)# spanning-tree vlan 101 port-priority 32
 
 ### Port Fast :
 
-
+## Tham khảo :
+(1).
+http://www.vnpro.org/forum/forum/ccnp®-và-ccdp®/switch-bcmsn/7514-các-loại-spanning-tree
 
 
