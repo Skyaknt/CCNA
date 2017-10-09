@@ -31,7 +31,7 @@ Giao Thức Phân nhánh chống vòng lặp
 
 Spanning Tree Protocol (STP) là một giao thức ngăn chặn sự lặp vòng, cho phép các bridge truyền thông với nhau để phát hiện vòng lặp vật lý trong mạng. Sau đó giao thức này sẽ định rõ một thuật toán mà bridge có thể tạo ra một topology luận lý chứa loop-free. Nói cách khác STP sẽ tạo một cấu trúc cây của free-loop gồm các lá và các nhánh nối toàn bộ mạng lớp 2.
 
-### <a name="cm"> 2. Chuyển mạch chống loop (/a>
+### <a name="cm"> 2. Chuyển mạch chống loop </a>
   
 Một Switch layer 2 chỉ thuộc về một miền broadcast, và chỉ chuyển đi các gói tin broadcast và multicast ra ngoài bằng cổng một cổng chính .
 Khi hiện tượng Vòng lặp trong chuyển mạch xảy ra, một cơn bão broadcast phá hoại sẽ xuất hiện chỉ trong 1 vài giây. Bão tin broadcast xảy ra khi mà các bản tin broadcast được gửi đi không ngừng giữa các Switch và tạo thành một vòng lặp giữa chúng. Bão Broadcast sẽ ngăn chặn hoàn toàn các kết nối lưu thông trong hệ thống mạng.
