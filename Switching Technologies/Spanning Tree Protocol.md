@@ -4,7 +4,9 @@ Giao Thức Phân nhánh chống vòng lặp
 #### Mục lục
 
 I. Tổng quan về STP
+
 [1. Định nghĩa](#dn)
+
 [2. Chuyển mạnh chống loop](#cm)
 
 II. Hoạt động
@@ -18,6 +20,7 @@ II. Hoạt động
 [III. Các loại Spanning Tree](#type)
 
 [1. Độc quyền Cisco](#dq)
+
 [2. Theo chuẩn IEEE](#ie)
    
    
