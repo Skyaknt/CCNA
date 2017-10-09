@@ -1,7 +1,33 @@
 # Spanning Tree Protocol
 Giao Thức Phân nhánh chống vòng lặp 
 
-## Chuyển mạch chống loop
+#### Mục lục
+
+I. Tổng quan về STP
+[1. Định nghĩa](#dn)
+[2. Chuyển mạnh chống loop](#cm)
+
+II. Hoạt động
+
+[1. Bầu chọn Root Bridge](#rb)
+  
+[2. Bàu chọn Root Port](#rp)
+ 
+[3. Bàu chọn Designated Port](#des)
+
+[III. Các loại Spanning Tree](#type)
+
+[1. Độc quyền Cisco](#dq)
+[2. Theo chuẩn IEEE](#ie)
+   
+   
+I. Tổng quan về STP
+### <a name="dn"> 1. Định nghĩa </a> 
+
+Spanning Tree Protocol (STP) là một giao thức ngăn chặn sự lặp vòng, cho phép các bridge truyền thông với nhau để phát hiện vòng lặp vật lý trong mạng. Sau đó giao thức này sẽ định rõ một thuật toán mà bridge có thể tạo ra một topology luận lý chứa loop-free. Nói cách khác STP sẽ tạo một cấu trúc cây của free-loop gồm các lá và các nhánh nối toàn bộ mạng lớp 2.
+
+### <a name="cm"> 2. Chuyển mạch chống loop (/a>
+  
 Một Switch layer 2 chỉ thuộc về một miền broadcast, và chỉ chuyển đi các gói tin broadcast và multicast ra ngoài bằng cổng một cổng chính .
 Khi hiện tượng Vòng lặp trong chuyển mạch xảy ra, một cơn bão broadcast phá hoại sẽ xuất hiện chỉ trong 1 vài giây. Bão tin broadcast xảy ra khi mà các bản tin broadcast được gửi đi không ngừng giữa các Switch và tạo thành một vòng lặp giữa chúng. Bão Broadcast sẽ ngăn chặn hoàn toàn các kết nối lưu thông trong hệ thống mạng.
 Cùng xem ví dụ sau : 
@@ -32,11 +58,13 @@ Việc xây dựng mô hình STP là một quá trình hội tụ đa tầng, g�
 Một khi các topo đầy đủ được xác định, và các vòng được loại bỏ, các thiết bị chuyển mạch được coi là mạng hội tụ .
 STP được **kích hoạt** mặc định trên tất cả các thiết bị chuyển mạch của Cisco, cho tất cả các VLAN
 
+## II. Hoạt động 
+
 **Tổng quát về chức năng các cổng :**
 
 ![Imgur](https://i.imgur.com/UR8onZU.png)
 
-## Bầu chọn Root Bridge 
+### <a name="rb"> 1. Bầu chọn Root Bridge </a> 
 
 Bước đầu tiên trong quá trình hội tụ STP là bầu chọn **Root Bridge** , cái mà sẽ là điểm tham chiếu trung tâm cho mô hình mạng. 
 Một Root Bridge được bầu dựa trên **chỉ số ID ( Bridge ID)** của nó, chính là sự kết hợp giữa 2 thành phần trong chuẩn 802.1D:
@@ -55,7 +83,7 @@ Các Switch gửi cho nhau các bản tin BPDU’s để tiến hành cuộc b�
 -	SwitchA có địa chỉ **MAC nhỏ hơn B**, vì vậy nó sẽ được chọn làm **Root Bridge** 
 Theo mặc định, một Switch sẽ luôn nghĩ nó là Root Bridge cho đến khi nó nhận bản tin BPDU từ một  Switch có số Bridge ID nhỏ hơn. Đây được gọi là **BPDU cấp trên ( superior BPDU )**. Quá trình bầu cử liên tục - nếu một Switch  mới với Bridge ID thấp nhất được thêm vào topo, nó sẽ được bầu làm Root Bridge.
 
-## Xác định Root Ports
+### <a name="rp"> 2. Bầu chọn Root Port </a> 
 
 Bước thứ 2 trong quá trình hội tụ STP là xác định **Root Ports**. Root port ở mỗi Switch sẽ có chỉ số root **path cost** thấp nhất đi tới **Root Bridge**  .
 Mỗi Switch chỉ có thể có **1 root port** . Root Bridge **không có** root port vì root port chính là **trỏ** từ **unroot Switch** tới **Root Bridge** . 
@@ -90,7 +118,7 @@ SwitchD(config)# int gi2/22
 SwitchD(config-if)# spanning-tree vlan 101 cost 42
 ```
 
-## Xác định Designated Ports 
+### <a name="des"> 3. Bầu chọn Designated Port </a> 
 
 - Bước thứ 3 là là xác định designated ports. Mỗi một phân vùng mạng sẽ có duy nhất 1 cổng được chỉ định để chuyển tiếp bản tin BPDUs và các frames đến phân vùng mạng đó.
 
@@ -164,6 +192,10 @@ Switch(config-if)# spanning-tree vlan 101 port-priority 32
 
 
 ### Port Fast :
+
+
+### Các loại Spanning Tree Protocol :
+
 
 ## Tham khảo :
 (1).
