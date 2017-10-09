@@ -24,7 +24,9 @@ Giao Thức Phân nhánh chống vòng lặp
 [2. Theo chuẩn IEEE](#ie)
    
    
-I. Tổng quan về STP
+<hr>   
+   
+## I. Tổng quan về STP
 ### <a name="dn"> 1. Định nghĩa </a> 
 
 Spanning Tree Protocol (STP) là một giao thức ngăn chặn sự lặp vòng, cho phép các bridge truyền thông với nhau để phát hiện vòng lặp vật lý trong mạng. Sau đó giao thức này sẽ định rõ một thuật toán mà bridge có thể tạo ra một topology luận lý chứa loop-free. Nói cách khác STP sẽ tạo một cấu trúc cây của free-loop gồm các lá và các nhánh nối toàn bộ mạng lớp 2.
@@ -60,6 +62,8 @@ Việc xây dựng mô hình STP là một quá trình hội tụ đa tầng, g�
 **The Root Bridge** đóng vai trò là điểm tham chiếu trung tâm cho topo STP.
 Một khi các topo đầy đủ được xác định, và các vòng được loại bỏ, các thiết bị chuyển mạch được coi là mạng hội tụ .
 STP được **kích hoạt** mặc định trên tất cả các thiết bị chuyển mạch của Cisco, cho tất cả các VLAN
+
+<hr>
 
 ## II. Hoạt động 
 
