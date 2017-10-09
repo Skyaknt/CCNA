@@ -205,7 +205,7 @@ Thông thường, bất cứ Switch  nào có chỉ số cumulative path cost th
 
 ###  IV. Các khái niệm
 
-#### < a name="id"> 1. PortID </a>
+#### <a name="id"> 1. PortID </a>
 
 - Khi bầu root và designated port, rất có thể sẽ xảy ra trường hợp mà cả 2 chỉ số path cost và Bridge ID bằng nhau giữa 2 thiết bị. Tham khảo ví dụ sau :
 
@@ -241,7 +241,7 @@ Switch(config-if)# spanning-tree vlan 101 port-priority 32
 **Bridge ID thấp nhất luôn được sử dụng để xác định Root Bridge.**
 
 
-#### < a name="fast"> 2. Port Fast </a>
+#### <a name="fast"> 2. Port Fast </a>
 
 - PortFast tạo ra một hoạt động chuyển mạch hoặc trunk port để vào trạng thái chuyển tiếp cây spanning ngay lập tức, bỏ qua các trạng thái **listening** và **learning**.
 - Bạn có thể sử dụng PortFast trên các cổng switch hoặc trunk được kết nối với một máy trạm, switch hoặc server duy nhất để cho phép các thiết bị kết nối với mạng ngay lập tức, thay vì chờ cổng chuyển từ trạng thái **listening** và **learning** sang trạng thái **forwarding** .
