@@ -23,7 +23,10 @@ Giao Thức Phân nhánh chống vòng lặp
 
 [2. Theo chuẩn IEEE](#ie)
    
-   
+#### IV. Các khái niệm 
+[1. Port ID](#id)
+[2. Port Fast](#fast)
+
 <hr>   
    
 ## I. Tổng quan về STP
@@ -67,9 +70,6 @@ STP được **kích hoạt** mặc định trên tất cả các thiết bị c
 
 ## II. Hoạt động 
 
-**Tổng quát về chức năng các cổng :**
-
-![Imgur](https://i.imgur.com/UR8onZU.png)
 
 ### <a name="rb"> 1. Bầu chọn Root Bridge </a> 
 
@@ -158,21 +158,68 @@ Thông thường, bất cứ Switch  nào có chỉ số cumulative path cost th
 *Ghi nhớ :  bất cứ cổng nào nếu không được chọn làm root hay designated port thì đều sẽ bị ở trạng thái khóa.*
 
 
-## PortID
+### III. Các loại Spanning Tree Protocol :
 
-Khi bầu root và designated port, rất có thể sẽ xảy ra trường hợp mà cả 2 chỉ số path cost và Bridge ID bằng nhau giữa 2 thiết bị. Tham khảo ví dụ sau :
+#### <a name="dq"> 1. Độc quyền Cisco </a>
+
+##### 1.1 PVST ( Per VLan Spanning Tree):
+
+- Một version độc quyền của Cisco. Mỗi vlan sẽ chạy một tiến trình STP riêng biệt và không bị phụ thuộc lẫn nhau . 
+
+- Ưu điểm :
+
+    - Giảm kích thước của STP topology , chia ra làm các topology nhỏ hơn , dẫn đến thời gian converge của STP giảm xuông . 
+    - Cung cấp thêm khả năng load balancing .
+    - Cung cấp các phần mở rộng như BackboneFast, UplinkFast, PortFast
+    
+- Khuyết điểm :
+
+    - Sử dụng nhiều tài nguyên của CPU trong việc quản lí nhiều vlan . 
+    
+##### 1.2 PVST+ 
+
+- Cisco tung ra một version khác của STP là PVST+ nhằm giải quyết vấn đề tương thích giữa CST và PVST . 
+- PVST+ đảm nhiệm vai trò như là một translator giữa PVST và CST .
+- PVST+ có thể giao tiếp với PVST qua kết nối ISL trunking , ngược lại PVST+ có thể giao tiếp với CST qua kết nối dot1q trunking .
+- Tại biên giới của PVST và PVST+ sẽ diễn ra việc mapping STP one-to-one . Tại biên giới của PVST+ và CST sẽ diễn ra việc mapping giữa một STP của CST và một PVST trong PVST+ ( STP trong CST chỉ có một mà thôi ) . 
+
+##### 1.3 Rapid-PVST+ 
+
+- Phiên bản nâng cao của PVST+
+- Dựa trên chuẩn IEEEE802.1w
+- Tốc độ hội tụ chuyển machj nhanh hơn chuẩn 802.D
+
+#### <a name="ie"> 2. Theo chuẩn IEEE </a>    
+
+##### 2.1 RSTP
+
+- Giới thiệu vào năm 1982, cung cấp khả năng hội tụ chống loop nhanh hơn chuẩn 802.D
+- Chạy được các phiên bản chung của các phần mở rộng STP độc quyền của Cisco
+- IEEE đã kết hợp RSTP vào 802.1D, xác định đặc điểm kỹ thuật như IEEE 802.1D-2004
+
+##### 2.2 MSTP
+
+- Cho phép nhiều VLAN được ánh xạ tới cùng một cá thể spanning tree, giảm số lượng các trường hợp cần thiết để hỗ trợ một số lượng lớn các VLAN.
+- MSTP được lấy cảm hứng từ các giao thức STP (MISTP) độc quyền của Cisco và là sự tiến triển của STP và RSTP.
+- Chuẩn IEEE 802.1Q-2003 hiện bao gồm MSTP. MSTP cung cấp nhiều đường chuyển tiếp cho lưu lượng dữ liệu và cho phép cân bằng tải.
+
+###  IV. Các khái niệm
+
+#### < a name="id"> 1. PortID </a>
+
+- Khi bầu root và designated port, rất có thể sẽ xảy ra trường hợp mà cả 2 chỉ số path cost và Bridge ID bằng nhau giữa 2 thiết bị. Tham khảo ví dụ sau :
 
 ![Imgur](https://i.imgur.com/RfYfqSU.png)
 
 
-Nhìn lên ví dụ ta thấy băng thông và path cost của cả 2 kết nối đều bằng nhau giữa 2 thiết bị. Vậy thì cổng nào sẽ trở thành root port trên Switch B? Bình thường Bridge ID thấp nhất sẽ được chọn tuy nhiên trong trường hợp này thì không được.
+- Nhìn lên ví dụ ta thấy băng thông và path cost của cả 2 kết nối đều bằng nhau giữa 2 thiết bị. Vậy thì cổng nào sẽ trở thành root port trên Switch B? Bình thường Bridge ID thấp nhất sẽ được chọn tuy nhiên trong trường hợp này thì không được.
 
-**PortID**  sẽ được sử dụng như là vòng loại cuối cùng,  bao gồm 2 thành phần sau :
+- **PortID**  sẽ được sử dụng như là vòng loại cuối cùng,  bao gồm 2 thành phần sau :
 
--	4-bit **port priority**
--	12-bit **port number**, được lấy ra từ số thứ tự port vật lí trên thiết bị.
+    -	4-bit **port priority**
+    -	12-bit **port number**, được lấy ra từ số thứ tự port vật lí trên thiết bị.
 
-Theo mặc định, port priority của một cổng là 128, và chỉ số thấp hơn sẽ được ưu tiên hơn. Nếu trong trường hợp này , thì số thứ tự port thấp nhất sẽ được chọn, ở đây là port gi2/23.
+- Theo mặc định, port priority của một cổng là 128, và chỉ số thấp hơn sẽ được ưu tiên hơn. Nếu trong trường hợp này , thì số thứ tự port thấp nhất sẽ được chọn, ở đây là port gi2/23.
 Port number là chỉ số cố định không thay đổi được, tuy nhiên thì port priority có thể thay đổi được bằng lệnh sau : 
 
 ```
@@ -181,8 +228,8 @@ Switch(config-if)# spanning-tree vlan 101 port-priority 32
 ```
 
 **Chú ý** : trong một số tài liệu có thể ghi Port ID là tổ hợp của 2 chỉ số : 8-bit priority và 8-bit port number thì điều này vẫn đúng trong chuẩn nguyên bản của 802.1D.
-- Tuy nhiên ở chuẩn **IEEE 802.1t** lại định lại chỉ số này là 12-bit port number để chấp nhận thiết bị chuyển mạch mô đun với mật độ cổng cao.
-- Thậm chí nhiều rắc rối hơn - một số trang trên trang web của Cisco sẽ xác định port ID  là một sự kết hợp của priority port và địa chỉ MAC, thay vì port number. Điều này không chính xác trong việc triển khai STP hiện đại.
+    - Tuy nhiên ở chuẩn **IEEE 802.1t** lại định lại chỉ số này là 12-bit port number để chấp nhận thiết bị chuyển mạch mô đun với mật độ cổng cao.
+    - Thậm chí nhiều rắc rối hơn - một số trang trên trang web của Cisco sẽ xác định port ID  là một sự kết hợp của priority port và địa chỉ MAC, thay vì port number. Điều này không chính xác trong việc triển khai STP hiện đại.
 
 ![Imgur](https://i.imgur.com/LwPWFnf.png)
 
@@ -193,19 +240,22 @@ Switch(config-if)# spanning-tree vlan 101 port-priority 32
 -	**Chỉ số port ID của thiết bị gửi thấp nhất** ( Lowest sender port ID)
 **Bridge ID thấp nhất luôn được sử dụng để xác định Root Bridge.**
 
-### Bản tin BPDU :
 
-![Imgur](https://i.imgur.com/V3ZWJK3.png)
+#### < a name="fast"> 2. Port Fast </a>
+
+- PortFast tạo ra một hoạt động chuyển mạch hoặc trunk port để vào trạng thái chuyển tiếp cây spanning ngay lập tức, bỏ qua các trạng thái **listening** và **learning**.
+- Bạn có thể sử dụng PortFast trên các cổng switch hoặc trunk được kết nối với một máy trạm, switch hoặc server duy nhất để cho phép các thiết bị kết nối với mạng ngay lập tức, thay vì chờ cổng chuyển từ trạng thái **listening** và **learning** sang trạng thái **forwarding** .
+
+Tham khảo : 
 
 
-### Port Fast :
-
-
-### Các loại Spanning Tree Protocol :
 
 
 ## Tham khảo :
-(1).
-http://www.vnpro.org/forum/forum/ccnp®-và-ccdp®/switch-bcmsn/7514-các-loại-spanning-tree
+(1). http://www.vnpro.org/forum/forum/ccnp®-và-ccdp®/switch-bcmsn/7514-các-loại-spanning-tree
 
+(2). https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/24248-147.html
 
+(3). https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4000/8-2glx/configuration/guide/stp_enha.html
+
+(4). http://www.vnpro.vn/bpdu-guard-la-gi-loopguard-la-gi/
