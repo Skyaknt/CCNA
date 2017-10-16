@@ -4,16 +4,21 @@
 
 
 Switch>
+
 Switch>**ena**
+
 Switch#**erase startup-config**
+
+```
 Erasing the nvram filesystem will remove all configuration files! Continue? [confirm]
 [OK]
 Erase of nvram: complete
 %SYS-7-NV_BLOCK_INIT: Initialized the geometry of nvram
 ```
 
-```
 Switch#**reload**
+
+```
 Proceed with reload? [confirm]
 C2960 Boot Loader (C2960-HBOOT-M) Version 12.2(25r)FX, RELEASE SOFTWARE (fc4)
 Cisco WS-C2960-24TT (RC32300) processor (revision C0) with 21039K bytes of memory.
@@ -90,11 +95,12 @@ Copyright (c) 1986-2005 by Cisco Systems, Inc.
 Compiled Wed 12-Oct-05 22:05 by pt_team
 
 Press RETURN to get started!
+```
 
 
 #### Cấu hình cơ bản cho Switch
 
-
+```
 Switch>
 Switch>ena
 Switch#conf t
@@ -111,30 +117,32 @@ SW1(config)#line vty 0 4
 SW1(config-line)#password cisco
 SW1(config-line)#login
 SW1(config-line)#exit
+```
 
 
 #### Đặt Ip cho từng cổng nếu bài lab yêu cầu dối với Router 
 
-
+```
 R1(config)#interface fastethernet 0/0
 R1(config-if)#ip address 192.168.1.1 255.255.255.0
 R1(config-if)#no shutdown
-
+```
 
 #### Cấu hình cổng Serial cho Router
 
-
+```
 R1(config-if)#interface serial 0/0/0
 R1(config-if)#ip address 192.168.2.1 255.255.255.0
 R1(config-if)#clock rate 64000
 R1(config-if)#no shutdown
 R1(config-if)# 
-
+```
 
 #### Lưu cấu hình 
 
+```
 R1#copy running-config startup-config
 Building configuration...
 [OK]
 R1# 
-
+```
