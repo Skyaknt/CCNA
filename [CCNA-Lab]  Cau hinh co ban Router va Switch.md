@@ -2,7 +2,7 @@
 
 ## 1. Xóa cấu hình hiện tại của Switch,Router 
 
-```
+
 Switch>
 Switch>**ena**
 Switch#**erase startup-config**
@@ -90,11 +90,11 @@ Copyright (c) 1986-2005 by Cisco Systems, Inc.
 Compiled Wed 12-Oct-05 22:05 by pt_team
 
 Press RETURN to get started!
-```
+
 
 #### Cấu hình cơ bản cho Switch
 
-```
+
 Switch>
 Switch>ena
 Switch#conf t
@@ -111,25 +111,25 @@ SW1(config)#line vty 0 4
 SW1(config-line)#password cisco
 SW1(config-line)#login
 SW1(config-line)#exit
-```
+
 
 #### Đặt Ip cho từng cổng nếu bài lab yêu cầu dối với Router 
 
-```
+
 R1(config)#interface fastethernet 0/0
 R1(config-if)#ip address 192.168.1.1 255.255.255.0
 R1(config-if)#no shutdown
-```
+
 
 #### Cấu hình cổng Serial cho Router
 
-```
+
 R1(config-if)#interface serial 0/0/0
 R1(config-if)#ip address 192.168.2.1 255.255.255.0
 R1(config-if)#clock rate 64000
 R1(config-if)#no shutdown
 R1(config-if)# 
-```
+
 
 #### Lưu cấu hình 
 
