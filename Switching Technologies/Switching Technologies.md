@@ -33,7 +33,7 @@
 ### d.	3 chức năng của Layer-2 Switching : 
 
 -	Address learning ( học địa chỉ mạng ) : Layer-2 Switches ghi nhớ địa chỉ của máy đích của mỗi frame nó nhận dược trên đường truyền và lưu nó vào bảng dữ liệu tài liệu MAC.
--	Forward/filter decisions ( Quyết định Chuyển tiếp / Ngăn chặn 1 gói tin ): Khi 1 frame được tiếp nhận trên một giao diện, switch nhìn vào địa chỉ phần cứng đích và thấy giao diện lối ra trong cơ sở dữ liệu MAC.
+-	Forward/filter decisions ( Quyết định Chuyển tiếp / Ngăn chặn 1 gói tin ): Khi 1 frame được tiếp nhận trên một cổng, switch nhìn vào địa chỉ phần cứng đích và xác định cổng ra cho frame dựa trên trong cơ sở dữ liệu MAC trong bảng Mac Table.
 -	Loop avoidance (Tránh hiện trượng vòng lặp ) : Nếu nhiều kết nối giữa các thiết bị chuyển mạch được tạo ra để dự phòng, các vòng lặp trong mạng có thể xảy ra. Giao thức Spanning-Tree (STP) được sử dụng để dừng các vòng lặp mạng và cho phép dự phòng.
 
 #### Address learning ( học địa chỉ mạng ) :
