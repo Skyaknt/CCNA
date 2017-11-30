@@ -45,9 +45,9 @@ Trường hợp trong bảng bộ lọc của Layer-2 Switch chưa có địa ch
 
 Trong hình trên, có 4 máy chủ kết nối vào Switch. Khi Switch được bật lên, nó vẫn chưa có gì trong bảng địa chỉ MAC của nó.
 1.	Máy 1 gửi một frame đến máy 3. Địa chỉ MAC của máy 1 là 0000.8c01.1111; của máy 3 là 0000.8c01.2222
-2.	Switch nhận frame đó trên ciingr E0 và lưu địa chỉ MAC nguồn của máy 1 trên bảng địa chỉ
+2.	Switch nhận frame đó trên cổng E0 và lưu địa chỉ MAC nguồn của máy 1 trên bảng địa chỉ
 3.	Vì trên bảng địa chỉ chưa có địa chỉ của máy đích nên Switch gửi bản tin đó đến tất cả các máy trong mạng
-4.	Máy 3 nhận được frame và phản hồi lại cho máy 1. Switch nhận frame phản hồi đó trên cổng E2 và kiểm tra frame, lưu địa chỉ MAC của máy 3 cũng như cổng đã nhận frame từ máy 3 vào là E2
+4.	Máy 3 nhận được frame và phản hồi lại cho máy 1. Switch nhận frame phản hồi đó trên cổng E2 và kiểm tra frame, lưu địa chỉ MAC của máy 3 cũng như cổng đã nhận frame từ máy 3 vào là E2.
 5.	Máy 1 và máy 3 bây giờ có thể tạo các kết nối trực tiếp ( point – to – point ) đến nhau và máy 2 , máy 4 không nhận được frame đó.
 Nếu 2 thiết bị không giao tiếp với nhau trong một khoảng thời gian thông qua Switch , nó sẽ xóa thông tin đã lưu trong bảng địa chỉ để tránh đầy bộ nhớ .
 
