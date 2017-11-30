@@ -62,7 +62,7 @@ Broadcast và Multicast frames không có địa chỉ MAC cụ thể nào. Đ�
 - Khi Switch nhận những frames như trên, mặc định  nó sẽ nhanh chóng gửi chúng tới tất cả các cổng đang hoạt động. Nếu muốn các gói tin multicast và broadcast chỉ gửi tới một khu vực cụ thể nào đó thì ta sẽ thiết lập khu vực mạng LAN ảo (VLAN -  Virtual LAN ).*
 
 #### Loop avoidance (Tránh hiện trượng vòng lặp ):
-Redundant Links ( Linh dự phòng ) là một phương pháp hữu ích giữa các Switches, chúng được tạo để kết nối giữa các Switches với nhau, trong trường hợp 1 kết nối bị lỗi hay hỏng hóc, Switch  sẽ lập tức dùng các kết nối dự phòng này để chuyển dữ liệu đi. 
+Redundant Links ( Link dự phòng ) là một phương pháp hữu ích giữa các Switches, chúng được tạo để kết nối giữa các Switches với nhau, trong trường hợp 1 kết nối bị lỗi hay hỏng hóc, Switch  sẽ lập tức dùng các kết nối dự phòng này để chuyển dữ liệu đi. 
 Mặc dù Redundant Links rất hữu dụng tuy nhiên nó lại gây ra nhiều vấn đề hơn là lợi ích của chính nó. Các frames có thể được broadcast xuống tất cả cá Link dự phòng cùng lúc và sẽ gây ra các vòng lặp trong mang. Sau đây là một số vấn đề tiêu biểu :
 
 1.	Nếu không có phương pháp Loop avoidance, các Switch sẽ luôn luôn đẩy tràn các bản tin broadcast vào trong mạng  - Hiện tượng Broadcast storm. Các frame broadcast sẽ luôn được gửi đi trong hệ thống mạng, tạo nên hiện tượng loop :
