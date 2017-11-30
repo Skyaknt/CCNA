@@ -27,6 +27,7 @@ VLANs là các hệ thống mạng con nằm trên cùng 1 switch được chia 
 - Nâng cao chất lượng công việc của nhân viên : Các nhân viên ở các phòng ban khác nhau sẽ dùng mạng ở vlan khác nhau, tăng tính truy cập thuận tiện hơn .
 - Dễ dàng thay đổi : thêm , bớt, sửa , xóa..
 
+
 ### <a name="dd"> 2. Đặc điểm </a>
 
 #### Vlan ID
@@ -84,10 +85,12 @@ Dùng để cấu hình Trunking cho các thiết bị không tương thích v�
 - Các Frame đi qua đường Trunking đều được gắn tag của giao thức 802.1Q hoặc ISL, trừ frame của VLAN 1 .
 - Native Vlan thường được ngầm định là VLAN1.
 Cấu hình Native VLAN :
+
+```
 Switch#config terminal  
 Switch(config)#interface fastethernet slot/port_number 
 Switch(config-if)#switchport trunk native vlan vlan-id
-
+```
 
 ##### d. Management VLAN :
 
