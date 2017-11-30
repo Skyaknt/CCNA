@@ -26,7 +26,7 @@
 
 -	Chính vì những vấn đề đó mà Layer-2 Switching vẫn chưa thể thay thế được routers.
 
-### c.	Bridging với LAN Swithing.
+### c.	Bridging với LAN Switching.
 
 ![Imgur](https://i.imgur.com/1HrEOh2.png)
 
