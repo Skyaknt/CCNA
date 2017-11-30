@@ -4,17 +4,19 @@
 ### [1. Định nghĩa](#dn)
 ### [2. Đặc điểm](#dd)
 ### [3. Cơ chế hoạt động](#cc)
-#### 	[3.1 Phương thức tạo VLANs](#met)
-		[3.2 Các loại VLANs](#type)
-		[3.3 Hình thức truy cập](#way)
+#### [3.1 Phương thức tạo VLANs](#met)
+#### [3.2 Các loại VLANs](#type)
+#### [3.3 Hình thức truy cập](#way)
 		
-		<hr>
+<hr>
 		
 ### <a name="dn"> 1. Định nghĩa </a>
 
 VLANs là các hệ thống mạng con nằm trên cùng 1 switch được chia ra từ một mạng gốc. Hiểu nôm na VLANs là một tập hợp các cổng của switch nằm trong cùng một broadcast domain. 
-	- Các cổng có thể được nhóm trên từng Vlan khác nhau trên từng SW và trên nhiều SW. Từ đó các máy trạm và máy chủ được nhóm vào một nhóm logic.
-	- Ở mỗi VLANs lại có thiết lập khác nhau tùy vào yêu cầu và mục đích sử dụng.
+
+- Các cổng có thể được nhóm trên từng Vlan khác nhau trên từng SW và trên nhiều SW. Từ đó các máy trạm và máy chủ được nhóm vào một nhóm logic.
+	
+- Ở mỗi VLANs lại có thiết lập khác nhau tùy vào yêu cầu và mục đích sử dụng.
 	
 #### Ưu điểm: 
 
