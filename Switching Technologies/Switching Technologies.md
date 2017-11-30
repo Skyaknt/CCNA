@@ -13,10 +13,10 @@
 -	Sử dụng bộ vi mạch tích hợp chuyên dụng ( ASICs- Application-Specific Integrated Circuits ) để dựng và duy trì các bảng bộ lọc ( filter tables )
 -	Layer-2 Switching có tốc độ rất nhanh vì nó không phải kiểm tra địa chỉ IP của gói tin mà chỉ quan tâm đến địa chỉ phần cứng ( MAC Address ) trước khi quyết định chuyển tiếp hay hủy gói tin ( frame ). Layer-2 Switching chỉ có chức năng sửa đổi địa chỉ phần cứng của các frame để chuyển tiếp đến trạm tiếp theo vì thế mà tốc độ sẽ nhanh hơn nhiều lần đồng thời ít lỗi phát sinh hơn so với việc định tuyến.
 -	Layer-2 Switching cung cấp :
-    o	Cầu nối dựa trên phần cứng ( MAC Address )
-    o	Tốc độ cao ( wire speed )
-    o	Độ trễ thấp (  Low latency )
-    o	Giá cả thấp ( low cost )
+    - Cầu nối dựa trên phần cứng ( MAC Address )
+    - Tốc độ cao ( wire speed )
+    - Độ trễ thấp (  Low latency )
+    - Giá cả thấp ( low cost )
 -	Sử dụng Layer-2 Switching cho các mạng doanh nghiệp, các phân đoạn mạng (  Network Segments ). Layer-2 Switching giúp tăng băng thông cho mỗi người dùng vì mỗi 1 kết nối đến switch sẽ có miền xung đột riêng của nó, vì thế mà Layer-2 Switching sẽ có thể kết nối nhiều thiết bị cùng lúc tại nhiều port khác nhau.
 
 ### b.	Hạn chế của Layer-2 Switching :
